@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-
   private
   def
     @user = User.find_by(id: params[:id])
