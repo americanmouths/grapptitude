@@ -1,0 +1,2 @@
+class DailyMindful < ApplicationRecord
+end

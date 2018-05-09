@@ -1,0 +1,2 @@
+class DailyMindfulsController < ApplicationController
+end
