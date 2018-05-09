@@ -11,12 +11,12 @@ class DailyMindfuls extends Component {
   }
 
 componentDidMount(){
-    fetch('/api/daily_mindfuls').then(response => {
-      console.log(response.json())
-      debugger;
-      this.setState({mindfuls: response.data})
-    })
-    .catch(error => console.log(error))
+  fetch('api/daily_mindfuls')
+  .then(response => {
+    console.log(response.json())
+    this.setState({mindfuls: response.data})
+  })
+  .catch(error => console.log(error))
 }
 
   render() {
