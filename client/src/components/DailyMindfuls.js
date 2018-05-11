@@ -1,37 +1,16 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 
-class DailyMindfuls extends Component {
-  constructor(props){
-    super(props)
-
-    this.state = {
-      mindfuls: []
-    }
-  }
-
-componentDidMount(){
-  fetch('api/daily_mindfuls')
-  .then(response => {
-    console.log(response.json())
-    this.setState({mindfuls: response.data})
+const DailyMindfuls = ({mindfuls}) => {
+  const dailyMindfuls = mindfuls.map((mindful, index) => {
+    return <li key={index}>{mindful.content}</li>
   })
-  .catch(error => console.log(error))
-}
 
-  render() {
-    return (
-      <div>
-        {this.state.mindfuls.map((mindful) => {
-          return(
-            <div className="title" key="{mindful.id}">
-              <h3>{mindful.content}</h3>
-            </div>
-          )
-        })}
-      </div>
-    )
-  }
+  return(
+    <div>
+    {dailyMindfuls}
+    </div>
+  )
 }
 
 export default DailyMindfuls;
