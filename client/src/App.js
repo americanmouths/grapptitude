@@ -5,6 +5,7 @@ import DailyMindfuls from './components/DailyMindfuls'
 import { fetchMindfuls } from './actions/fetchMindfuls'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import LoginContainer from './components/LoginContainer'
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
           <h1>Grapptitude</h1>
         </div>
         <DailyMindfuls mindfuls={this.props.mindfuls}/>
+        <LoginContainer />
       </div>
     );
   }
