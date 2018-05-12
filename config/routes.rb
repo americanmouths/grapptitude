@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :users
   scope '/api' do
-    post 'user_token' => 'user_token#create'
+    post '/user_token' => 'user_token#create'
 
     resources :users, only: [:create, :show]
     resources :daily_greats
