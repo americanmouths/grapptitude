@@ -4,4 +4,8 @@ class User < ApplicationRecord
   acts_as_follower
   acts_as_liker
   has_many :daily_greats
+
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :password, presence: true
 end
