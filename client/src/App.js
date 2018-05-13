@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import DailyMindfuls from './components/DailyMindfuls'
-import { fetchMindfuls } from './actions/fetchMindfuls'
+import { fetchMindfuls } from './actions/mindfuls'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import LoginContainer from './components/LoginContainer'
+import LoginContainer from './components/users/logincontainer'
+import SignupContainer from './components/users/signupcontainer'
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
         </div>
         <DailyMindfuls mindfuls={this.props.mindfuls}/>
         <LoginContainer />
+        <SignupContainer />
       </div>
     );
   }
