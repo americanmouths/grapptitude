@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 170px;
+  height: 140px;
   padding: 20px;
   color: white;
 }
@@ -26,12 +26,20 @@
 .daily-great-all {
   color: red;
   border: 1px black solid;
-  display: inline-block;
+  display: block;
   text-decoration: none;
   padding: 10px;
   margin: auto;
-  width: auto;
+  margin-top: 20px;
+  width: 300px;
   font-family: 'Montserrat', sans-serif;
+}
+
+.Mindful-header {
+  background-color: #4060B7;
+  height: 30px;
+  padding: 20px;
+  color: white;
 }
 
 @keyframes App-logo-spin {
