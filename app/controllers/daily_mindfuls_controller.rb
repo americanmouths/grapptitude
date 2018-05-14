@@ -1,5 +1,7 @@
 class DailyMindfulsController < ApplicationController
   def index
-    render json: DailyMindful.all
+    @mindfuls = DailyMindful.all
+    @random_mindful = @mindfuls.sample
+    render json: @random_mindful
   end
 end
