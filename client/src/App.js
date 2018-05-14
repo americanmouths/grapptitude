@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import DailyMindfuls from './components/mindfuls/DailyMindfuls'
@@ -8,6 +9,7 @@ import SignupContainer from './components/users/signupcontainer';
 import { MindfulsWrapper } from './components/mindfuls/mindfulscontainer';
 import NavBar from './components/header/navbar';
 import { GreatsWrapper } from './components/greats/dailygreatscontainer';
+import Hi from './components/users/hi'
 
 class App extends Component {
 
@@ -18,12 +20,16 @@ class App extends Component {
           <div className="App-title">
             <h1>Grapptitude</h1>
           </div>
+          <NavBar />
         </div>
         <div className="Mindful-header">
           Daily Mindful: <MindfulsWrapper />
         </div>
-        {/* <LoginContainer /> */}
-        {/* <SignupContainer /> */}
+        <div className="App-routes">
+          <Route exact path="/signup" component={SignupContainer} />
+          <Route exact path="/login" component={LoginContainer} />
+          <Route exact path="/logged_in" component={Hi} />
+        </div>
         <GreatsWrapper />
       </div>
     );

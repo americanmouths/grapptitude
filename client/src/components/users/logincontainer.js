@@ -19,7 +19,7 @@ export default class LoginContainer extends Component {
     login(loginParams).then((user) => {
     localStorage.setItem("jwtToken", user.jwt)
     localStorage.setItem("id", user.id)
-  }).then(console.log("logged in"))
+  }).then( this.props.history.push('/logged_in'))
 }
 
 handleEmail = (event) => {
