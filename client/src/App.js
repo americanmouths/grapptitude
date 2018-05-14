@@ -7,13 +7,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import LoginContainer from './components/users/logincontainer'
 import SignupContainer from './components/users/signupcontainer'
+import { MindfulsWrapper } from './components/mindfuls/mindfulscontainer'
 
 
 class App extends Component {
-
-  componentDidMount(){
-    this.props.fetchMindfuls();
-  }
 
   render() {
     return (
@@ -21,7 +18,7 @@ class App extends Component {
         <div className="App-header">
           <h1>Grapptitude</h1>
         </div>
-        <DailyMindfuls mindfuls={this.props.mindfuls}/>
+        <MindfulsWrapper />
         <LoginContainer />
         <SignupContainer />
       </div>
@@ -29,16 +26,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    mindfuls: state.mindfuls.mindfuls
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchMindfuls: fetchMindfuls
-  }, dispatch);
-}
-
-export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
+export default App;

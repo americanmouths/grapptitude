@@ -13,6 +13,6 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <WrapperApp />
+    <App />
   </Provider>, document.getElementById('root'));
 registerServiceWorker();
