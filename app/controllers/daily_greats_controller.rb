@@ -35,6 +35,4 @@ class DailyGreatsController < ApplicationController
     def daily_great_params
       params.require(:dailygreat).permit(:user_id, :content)
     end
-  end
-
 end
