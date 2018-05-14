@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DailyMindfuls from '../DailyMindfuls'
+import DailyMindfuls from './DailyMindfuls'
 import { fetchMindfuls } from '../../actions/mindfuls'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
