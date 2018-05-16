@@ -7,7 +7,8 @@ class NavBar extends React.Component {
     return(
       <div>
         <NavLink className="item" to="/signup"> Sign Up </NavLink> ||
-        <NavLink className="item" to="/login"> Log In </NavLink>
+        <NavLink className="item" to="/login"> Log In </NavLink> ||
+        <NavLink className="item" to="/logout"> Log Out</NavLink>
       </div>
     )
   }
