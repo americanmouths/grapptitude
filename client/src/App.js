@@ -9,7 +9,7 @@ import SignupContainer from './components/users/signupcontainer';
 import { MindfulsWrapper } from './components/mindfuls/mindfulscontainer';
 import NavBar from './components/header/navbar';
 import { GreatsWrapper } from './components/greats/dailygreatscontainer';
-import Hi from './components/users/hi'
+import { MainWrapper } from './components/users/maincontainer';
 
 class App extends Component {
 
@@ -26,11 +26,11 @@ class App extends Component {
           Daily Mindful: <MindfulsWrapper />
         </div>
         <div className="App-routes">
+          <Route exact path="/" component={GreatsWrapper} />
           <Route exact path="/signup" component={SignupContainer} />
           <Route exact path="/login" component={LoginContainer} />
-          <Route exact path="/logged_in" component={Hi} />
+          <Route exact path="/logged_in" component={MainWrapper} />
         </div>
-        <GreatsWrapper />
       </div>
     );
   }
