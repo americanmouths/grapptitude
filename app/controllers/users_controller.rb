@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
 
-    if user.save && user.valid
+    if user.save && user.valid?
       render json: { user_id: user.id }
     else
       render json: { message: "Error" }
