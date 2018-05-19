@@ -1,9 +1,9 @@
 class DailyGreatsController < ApplicationController
-  before_action :authenticate_user
 
   def index
-    dailygreats = current_user.daily_greats
-    render json: dailygreats
+    user = User.find(params[:user_id])
+    dailygreats = user.daily_greats
+    render json: dailygreats, status: 200
   end
 
   def create

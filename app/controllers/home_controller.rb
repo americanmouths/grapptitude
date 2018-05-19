@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
 
   def all
-    @dailygreats = DailyGreat.all
-    render json: @dailygreats
+    render json: DailyGreat.all, status: 200
   end
-  
+
 end
