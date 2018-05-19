@@ -1,10 +1,12 @@
 import fetch from 'isomorphic-fetch'
-const token = localStorage.getItem("jwtToken")
 
 export function fetchUserGreats() {
+  const token = localStorage.getItem("token");
+  const id = localStorage.getItem("id");
+
   return (dispatch) => {
     dispatch({type: 'LOADING_USER_DAILY_GREATS'});
-    return fetch('http://localhost:3001/api/daily_greats', {
+    return fetch(`http://localhost:3001/api/users/${id}/daily_greats`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
