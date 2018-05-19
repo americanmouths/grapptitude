@@ -1,15 +1,28 @@
 class ApplicationController < ActionController::API
-  include Knock::Authenticable
-  #helper_method :current_user, :logged_in?
+  include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  private
+  def issue_token(payload)
+    JWT.encode(payload, "secretcode")
+  end
 
-  #def current_user
-    #@current_user ||= User.find_by(session_token: session[:session_token])
-  #end
+  def current_user
+    authenticate_or_request_with_http_token do |jwt_token, options|
+      begin
+        decoded_token = JWT.decode(jwt_token, "secretcode")
 
-  #def logged_in?
-    #!!current_user
-  #end
+      rescue JWT::DecodeError
+        return nil
+      end
+
+      if decoded_token[0]["user_id"]
+        @current_user ||= User.find(decoded_token[0]["user_id"])
+      else
+      end
+    end
+  end
+
+  def logged_in?
+    !!current_user
+  end
 
 end
