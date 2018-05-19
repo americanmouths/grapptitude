@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import DailyMindfuls from './components/mindfuls/DailyMindfuls'
-import { Route, Switch } from 'react-router-dom';
-import LoginContainer from './components/users/logincontainer';
-import SignupContainer from './components/users/signupcontainer';
-import { MindfulsWrapper } from './components/mindfuls/mindfulscontainer';
-import NavBar from './components/header/navbar';
-import { GreatsWrapper } from './components/greats/dailygreatscontainer';
-import { MainWrapper } from './components/users/maincontainer';
+
+import NavBar from './components/headers/NavBar';
+import LogInPage from './containers/LogInPage';
+import SignUpContainer from './containers/SignUpPage';
+import { Home } from './containers/Home';
+import { Mindfuls } from './containers/Mindfuls';
+import { Greats } from './containers/Greats';
 
 class App extends Component {
 
   render() {
     return (
+    <Router>
       <div className="App">
         <div className="App-header">
           <div className="App-title">
@@ -22,16 +22,20 @@ class App extends Component {
           </div>
           <NavBar />
         </div>
+
         <div className="Mindful-header">
-          Daily Mindful: <MindfulsWrapper />
+          Daily Mindful: <Mindfuls />
         </div>
-        <div className="App-routes">
-          <Route exact path="/" component={GreatsWrapper} />
-          <Route exact path="/signup" component={SignupContainer} />
-          <Route exact path="/login" component={LoginContainer} />
-          <Route exact path="/logged_in" component={MainWrapper} />
-        </div>
+
+        <Switch>
+          <Route exact path="/" component={Greats} />
+          <Route exact path="/login" component={LogInPage} />
+          <Route exact path="/signup" component={SignUpContainer} />
+          <Route exact path="/home" component={Home} />
+        </Switch>
+
       </div>
+    </Router>
     );
   }
 }
