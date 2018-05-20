@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux'
-import { loginUser } from '../actions/userAuthorization';
+import { connect } from 'react-redux';
+import { loginUser } from './../actions/userAuthorization';
 
 class LogInPage extends Component {
   constructor() {
@@ -65,7 +65,7 @@ class LogInPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    token: state.auth.token,
+    token: state.userAuth.token,
   }
 }
 
