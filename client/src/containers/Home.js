@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserGreats from './../components/greats/UserGreats'
+import { NewUserGreat } from './NewUserGreat'
 import { fetchUserGreats } from './../actions/userGreats'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -14,6 +15,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
+        <NewUserGreat />
         <UserGreats userGreats={this.props.userGreats}/>
       </div>
     );
