@@ -5,7 +5,7 @@ import './App.css';
 
 import NavBar from './components/headers/NavBar';
 import LogInPage from './containers/LogInPage';
-import SignUpContainer from './containers/SignUpPage';
+import SignUpPage from './containers/SignUpPage';
 import { Home } from './containers/Home';
 import { Mindfuls } from './containers/Mindfuls';
 import { Greats } from './containers/Greats';
@@ -30,7 +30,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Greats} />
           <Route exact path="/login" component={LogInPage} />
-          <Route exact path="/signup" component={SignUpContainer} />
+          <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/home" component={Home} />
         </Switch>
 
