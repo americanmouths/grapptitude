@@ -7,8 +7,8 @@ class DailyGreatsController < ApplicationController
   end
 
   def create
-    @dailygreat = DailyGreat.create(daily_great_params)
-    if @dailygreat.valid && @dailygreat.save
+    @dailygreat = DailyGreat.create(content: params[:content], user_id: params[:user_id])
+    if @dailygreat.save
       render json: @dailygreat, status: 200
     end
   end
@@ -33,6 +33,6 @@ class DailyGreatsController < ApplicationController
 
   private
     def daily_great_params
-      params.require(:dailygreat).permit(:user_id, :content)
+      params.require(:daily_great).permit(:user_id, :content)
     end
 end
