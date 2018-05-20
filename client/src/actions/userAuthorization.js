@@ -34,8 +34,8 @@ export function loginUser(loginData) {
     }).then(response => response.json())
       .then(JSON => { dispatch({
         type: "LOG_IN",
-        JSON: JSON}
-      );
+        JSON: JSON
+      });
     });
   }
 }
