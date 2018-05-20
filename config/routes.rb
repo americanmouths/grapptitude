@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     post '/signup' => 'users#create'
 
-    resources :users, only: [:create, :show] do
-      get '/daily_greats' => 'daily_greats#index'
+    resources :users, only: [:create] do
+      resources :daily_greats
     end
 
     get '/daily_mindfuls' => 'daily_mindfuls#index'
