@@ -36,3 +36,23 @@ export function newUserGreat(userGreatData) {
       .then(userGreats => dispatch({ type: 'ADD_USER_DAILY_GREAT', payload: userGreats }));
   };
 }
+
+export function deleteUserGreatFromAPI(greatId, token){
+  const id = localStorage.getItem("id");
+  return (dispatch) => {
+    dispatch({type: 'DELETING_USER_GREAT'});
+    return fetch(`/api/users/${id}/daily_greats/${greatId}`, {
+      method: 'delete',
+      body: JSON.stringify({daily_great_id: greatId}),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(response => response.json())
+      .then(JSON => dispatch({
+        type: 'DELETE_USER_DAILY_GREAT',
+        JSON: JSON
+      }));
+  };
+}
