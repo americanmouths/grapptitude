@@ -7,9 +7,9 @@ class DailyGreatsController < ApplicationController
   end
 
   def create
-    @dailygreat = DailyGreat.create(content: params[:content], user_id: params[:user_id])
-    if @dailygreat.save
-      render json: @dailygreat, status: 200
+    dailygreat = DailyGreat.create(content: params[:content], user_id: params[:user_id])
+    if dailygreat.save
+      render json: dailygreat, status: 200
     end
   end
 
@@ -19,8 +19,19 @@ class DailyGreatsController < ApplicationController
   end
 
   def destroy
-    @dailygreat = DailyGreat.find_by(id: params[:id])
-    @dailygreat.delete
+    if current_user
+      dailygreat = DailyGreat.find_by(id: params[:daily_great_id])
+      dailygreat.destroy
+      render json: {
+        userGreats: current_user.daily_greats,
+        message: {
+          type: "success",
+          text: "Daily great removed"
+        }
+      }
+    else
+      render json: {errors: "You are not authorized to delete this great"}
+    end
   end
 
   def update
