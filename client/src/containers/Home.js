@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import UserGreats from './../components/greats/UserGreats'
-import { NewUserGreat } from './NewUserGreat'
-import { fetchUserGreats, deleteUserGreatFromAPI } from './../actions/userGreats'
+import UserGreats from './../components/greats/UserGreats';
+import { NewUserGreat } from './NewUserGreat';
+import { fetchUserGreats, deleteUserGreatFromAPI } from './../actions/userGreats';
+import Greeting from './../components/headers/Greeting';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -20,6 +21,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
+        <Greeting name={this.props.currentUser}/>
         <NewUserGreat />
         <UserGreats userGreats={this.props.userGreats} deleteUserGreat={this.deleteUserGreat}/>
       </div>
@@ -29,7 +31,8 @@ class HomeContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    userGreats: state.userGreats.userGreats
+    userGreats: state.userGreats.userGreats,
+    currentUser: state.userAuth.currentUser
   }
 }
 
