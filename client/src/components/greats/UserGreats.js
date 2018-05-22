@@ -1,8 +1,9 @@
 import React from 'react';
 
-const UserGreats = ({userGreats}) => {
-  const allUserGreats = userGreats.map((great, index) => {
-    return <p key={index} className="daily-great-all">{great.content}</p>
+const UserGreats = (props) => {
+  const allUserGreats = props.userGreats.map((great, index) => {
+    const id = great.id
+    return <div><p key={index} className="daily-great-all">{great.content}<br /><button onClick={() => props.deleteUserGreat(id)}>Delete</button></p></div>
   })
 
   return(
