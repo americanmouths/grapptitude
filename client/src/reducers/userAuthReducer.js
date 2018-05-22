@@ -25,7 +25,7 @@ function setUser(state, json) {
     localStorage.setItem('id', json.user.id);
   }
   return {...state,
-    currentUser: json.user,
+    currentUser: json.user.username,
     token: json.token,
     isLoading: false
   };
