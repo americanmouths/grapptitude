@@ -38,7 +38,7 @@ class NewUserGreatContainer extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <label>Add a New User Great </label>
+          <label>What are you thankful for?</label>
             <input
               type="text"
               name="content"
