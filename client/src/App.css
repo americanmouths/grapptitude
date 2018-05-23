@@ -2,47 +2,72 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  background: #afbfdd;
 }
-
+/*** Grapptitude Header ****/
 .App-header {
-  background-color: #222;
-  height: 170px;
+  background-color: #1a3156;
+  height: 135px;
   padding: 20px;
   color: white;
 }
 
-.App-title {
-  font-size: 1.9em;
+div.App-title h1 {
+  font-size: 4.8em;
   font-family: 'Satisfy', cursive;
 }
 
-.App-intro {
-  font-size: large;
-}
-
+/*** Daily Great ****/
 .daily-great-all {
-  color: red;
-  border: 1px black solid;
+  color: #8972af;
+  border: 1px #1a3156 solid;
   display: block;
   text-decoration: none;
   padding: 10px;
   margin: auto;
   margin-top: 20px;
   width: 300px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  background: white;
+  text-align: center;
 }
 
-.Mindful-header {
-  background-color: #4060B7;
-  height: 30px;
-  padding: 20px;
+/*** Navbar ****/
+.navbar-default {
+  background: #2d5391;
+}
+
+.navbar-default .navbar-brand {
   color: white;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.navbar-default .navbar-nav>li>a {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #afbfdd;
+}
+
+
+/*** Daily Mindful ****/
+div.mindful-header.navbar-brand {
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.4em;
+  margin: auto;
+}
+
+div.mindful-header.navbar-brand:hover {
+  text-decoration: none;
+  color: white;
+}
+
+div.mindful-header.navbar-brand>div>div>p{
+  text-align: center;
+  margin: auto;
 }
