@@ -4,7 +4,7 @@ const DailyMindfuls = ({mindfuls}) => {
 
   return(
     <div>
-    {mindfuls.content}
+      <p>Today you should try to {mindfuls.content}</p>
     </div>
   )
 }
