@@ -71,3 +71,13 @@ div.mindful-header.navbar-brand>div>div>p{
   text-align: center;
   margin: auto;
 }
+
+/***Login***/
+
+.Login {
+  font-size: 3em;
+  text-decoration: underline;
+  text-align: center;
+  font-family: 'Raleway', cursive;
+  color: white;
+}
