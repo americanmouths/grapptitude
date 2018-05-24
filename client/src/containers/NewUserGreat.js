@@ -36,19 +36,32 @@ class NewUserGreatContainer extends Component {
   render() {
 
     return (
-      <div>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-          <label>What are you thankful for?</label>
-            <input
+      <div className="row">
+        <div className="col-md-4">
+        </div>
+
+        <div className="col-md-4">
+          <br />
+          <form onSubmit={(event) => this.handleSubmit(event)} className="New-User-Great">
+            <textarea
+              rows="3"
+              cols="40"
               type="text"
               name="content"
               value={this.state.content}
               onChange={(event) => this.handleChange(event)}
-              placeholder="content"
+              placeholder="I'm thankful for..."
+              className="User-Great-Text-Area"
             />
-            <input type="submit" />
+            <br />
+            <button className="btn btn-primary">Submit</button>
           </form>
         </div>
+
+        <div className="col-md-4">
+        </div>
+
+      </div>
     )
   }
 }

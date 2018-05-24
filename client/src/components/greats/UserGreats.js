@@ -7,8 +7,16 @@ const UserGreats = (props) => {
   })
 
   return(
-    <div>
-    {allUserGreats}
+    <div className="row">
+      <div className="col-md-4"></div>
+      <div className="col-md-4">
+        <div className="Past-Thankful">
+          <br />
+          In the past you were thankful for... <br />
+        </div>
+        {allUserGreats}
+      </div>
+      <div className="col-md-4"></div>
     </div>
   )
 }
