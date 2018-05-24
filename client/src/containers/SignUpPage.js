@@ -38,26 +38,38 @@ class SignUpPage extends Component {
     const { username, password } = this.state
 
     return (
-      <div>
-        <h2>Sign up</h2>
-        <form>
-            <input
-              type="username"
-              name="username"
-              value={username}
-              onChange={this.handleChange}
-              placeholder="username"
-            />
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-              placeholder="password"
-            />
-          <button onClick={this.handleSubmit}>Sign up</button>
-          </form>
+      <div className="row">
+        <div className="col-md-4">
         </div>
+
+        <div className="col-md-4">
+          <h2 className="Sign-Up">Sign Up</h2>
+            <form className="Sign-Up-Form">
+              <input
+                type="username"
+                name="username"
+                value={username}
+                onChange={this.handleChange}
+                placeholder="username"
+              />
+              <br />
+              <br />
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+                placeholder="password"
+              />
+              <br />
+              <br />
+              <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+          <div className="col-md-4">
+          </div>
+      </div>
     )
   }
 }

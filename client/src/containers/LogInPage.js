@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { loginUser } from './../actions/userAuthorization';
-import { Grid, Row, Col} from 'react-bootstrap/lib'
 
 class LogInPage extends Component {
   constructor() {
@@ -40,40 +39,38 @@ class LogInPage extends Component {
     const { username, password } = this.state
 
     return (
-      <div>
-        <Grid>
-          <Row>
-            <Col xs={6} md={4}>
-            </Col>
+      <div className="row">
+        <div className="col-md-4">
+        </div>
 
-            <Col xs={6} md={4}>
-              <h2 className="Login">Log In</h2>
-                <form>
-                  <input
-                    type="username"
-                    name="username"
-                    value={username}
-                    onChange={this.handleChange}
-                    placeholder="username"
-                  />
-                  <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={this.handleChange}
-                    placeholder="password"
-                  />
-                  <br />
-                  <br />
-                  <button onClick={this.handleSubmit}>Submit</button>
-                  </form>
-            </Col>
+        <div className="col-md-4">
+          <h2 className="Login">Log In</h2>
+            <form className="Login-Form">
+              <input
+                type="username"
+                name="username"
+                value={username}
+                onChange={this.handleChange}
+                placeholder="username"
+              />
+              <br />
+              <br />
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+                placeholder="password"
+              />
+              <br />
+              <br />
+              <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
+            </form>
+          </div>
 
-          <Col xsHidden md={4}>
-          </Col>
-        </Row>
-      </Grid>
-    </div>
+          <div className="col-md-4">
+          </div>
+      </div>
      )
    }
  }
