@@ -2,7 +2,7 @@ class DailyGreatsController < ApplicationController
 
   def index
     user = User.find(params[:user_id])
-    dailygreats = user.daily_greats
+    dailygreats = user.daily_greats.order(id: :desc)
     render json: dailygreats, status: 200
   end
 
@@ -23,7 +23,7 @@ class DailyGreatsController < ApplicationController
       dailygreat = DailyGreat.find_by(id: params[:daily_great_id])
       dailygreat.destroy
       render json: {
-        userGreats: current_user.daily_greats,
+        userGreats: current_user.daily_greats.order(id: :desc),
         message: {
           type: "success",
           text: "Daily great removed"
