@@ -3,11 +3,11 @@
 }
 
 body {
-  background: #d9e5f7;
+  background: #e7eff6;
 }
 /*** Grapptitude Header ****/
 .App-header {
-  background-color: #1a3156;
+  background-color: #2a4d69;
   height: 135px;
   padding: 15px;
   color: white;
@@ -20,8 +20,9 @@ div.App-title h1 {
 
 /*** Daily Great ****/
 .daily-great-all {
-  color: #8972af;
-  border: 1px #1a3156 solid;
+  color: #63ace5;
+  border: 1px groove #2a4d69;
+  border-radius: 20px;
   display: block;
   text-decoration: none;
   padding: 10px;
@@ -36,8 +37,8 @@ div.App-title h1 {
 
 /*** Navbar ****/
 .navbar-default {
-  background: #2d5391;
-  border: 2px solid #1a3156;
+  background: #4b86b4;
+  border: 2px solid #2a4d69;
 }
 
 .navbar-default .navbar-brand {
@@ -93,7 +94,7 @@ div.mindful-header.navbar-brand>div>div>p{
   text-decoration: underline;
   text-align: center;
   font-family: 'Raleway', cursive;
-  color: #2d5391;
+  color: #4b86b4;
 }
 
 .Login-Form, .Sign-Up-Form {
@@ -107,9 +108,9 @@ div.mindful-header.navbar-brand>div>div>p{
 .Welcome {
   text-align: center;
   font-family: 'Shadows Into Light Two', cursive;
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin: auto;
-  color: #2d5391;
+  color: #2a4d69;
 }
 
 /***New User Great***/
@@ -120,8 +121,8 @@ div.mindful-header.navbar-brand>div>div>p{
 }
 
 .User-Great-Text-Area {
-  color: #8972af;
-  border: 1px #1a3156 solid;
+  color: #63ace5;
+  border: 1px double #2a4d69;
   display: block;
   text-decoration: none;
   padding: 10px;
@@ -132,6 +133,7 @@ div.mindful-header.navbar-brand>div>div>p{
   font-size: 1.2em;
   background: white;
   text-align: center;
+  border-radius: 20px;
 }
 
 .Past-Thankful {
@@ -139,5 +141,14 @@ div.mindful-header.navbar-brand>div>div>p{
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 1.55em;
   margin: auto;
-  color: #2d5391;
+  color: #2a4d69;
+}
+
+.Daily-Great-Intro {
+  color: black;
+  font-family: 'Raleway', sans-serif;
+}
+
+.btn-toolbar{
+  display: inline-block;
 }
