@@ -21,7 +21,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <Greeting name={this.props.currentUser}/>
+        <Greeting />
         <NewUserGreat />
         <UserGreats userGreats={this.props.userGreats} deleteUserGreat={this.deleteUserGreat}/>
       </div>
@@ -32,7 +32,6 @@ class HomeContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     userGreats: state.userGreats.userGreats,
-    currentUser: state.userAuth.currentUser
   }
 }
 
