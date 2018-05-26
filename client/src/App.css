@@ -5,18 +5,19 @@
 body {
   background: #e7eff6;
 }
-/*** Grapptitude Header ****/
+/*** What are you thankful for header ****/
 
 .App-header {
-  background-color: #2a4d69;
-  height: 135px;
+  background-color: #e7eff6;
+  height: 100px;
   padding: 15px;
   color: white;
 }
 
 div.App-title h1 {
-  font-size: 4.8em;
+  font-size: 2.0em;
   font-family: 'Satisfy', cursive;
+  color: #2a4d69;
 }
 
 /*** Daily Great ****/
@@ -68,22 +69,26 @@ div.App-title h1 {
 .navbar-default {
   background: #4b86b4;
   border: 2px solid #2a4d69;
+  height: 75px;
 }
 
 .navbar-default .navbar-brand {
-  color: white;
+  color: #2a4d69;
+  padding-top: 25px;
 }
 
 .navbar-default .navbar-nav>li>a {
     color: white;
     font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
+    padding-top: 25px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
     color: #afbfdd;
 }
 
+/* graptitude in navbar */
 .navbar-brand {
   text-align: center;
   font-family: 'Satisfy', cursive;
@@ -93,10 +98,8 @@ div.App-title h1 {
 
 navbar-brand:hover {
   text-decoration: none;
-  color: white;
+  color: #2a4d69;
 }
-
-
 
 /***Login***/
 
@@ -168,14 +171,12 @@ navbar-brand:hover {
 div.modal-header,
 div.modal-footer,
 div.modal-body {
-  background: #4b86b4;
+  background: #42759e;
   border: none;
   text-align: center;
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 1.55em;
   color: white;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
 }
 
 button.close {
