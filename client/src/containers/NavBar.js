@@ -65,7 +65,7 @@ class NavBar extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <p>What are you thankful for?</p>
+              <p>Grapptitude</p>
             </Navbar.Brand>
           </Navbar.Header>
             {loggedIn ? userNav : guestNav}

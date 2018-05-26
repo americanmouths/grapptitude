@@ -6,6 +6,7 @@ body {
   background: #e7eff6;
 }
 /*** Grapptitude Header ****/
+
 .App-header {
   background-color: #2a4d69;
   height: 135px;
@@ -19,23 +20,51 @@ div.App-title h1 {
 }
 
 /*** Daily Great ****/
-.daily-great-all {
-  color: #63ace5;
-  border: 1px groove #2a4d69;
+
+.Daily-Great-Container {
+  border: 2px groove #2a4d69;
   border-radius: 20px;
   display: block;
-  text-decoration: none;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin: auto;
   margin-top: 20px;
   width: 300px;
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 1.2em;
   background: white;
   text-align: center;
 }
 
+.Daily-Great-Content {
+  color: #2a4d69;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 1.4em;
+  padding-top: 17px;
+}
+
+.All-Greats-Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.Daily-Great-Created,
+.Daily-Great-Author {
+  display: flex;
+  flex-direction: column;
+  color: #b44b52;
+  font-family: 'Raleway', sans-serif;
+}
+
+.Daily-Great-Created {
+  color: #b4ae4b;
+  font-family: 'Raleway', sans-serif;
+}
+
+.span.glyphicon.glyphicon-user {
+  display: inline;
+}
 /*** Navbar ****/
+
 .navbar-default {
   background: #4b86b4;
   border: 2px solid #2a4d69;
@@ -57,8 +86,8 @@ div.App-title h1 {
 
 .navbar-brand {
   text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 1.7em;
+  font-family: 'Satisfy', cursive;
+  font-size: 2.5em;
   margin: 0 auto;
 }
 
@@ -66,6 +95,7 @@ navbar-brand:hover {
   text-decoration: none;
   color: white;
 }
+
 
 
 /***Login***/
@@ -123,11 +153,6 @@ navbar-brand:hover {
   font-size: 1.55em;
   margin: auto;
   color: #2a4d69;
-}
-
-.Daily-Great-Intro {
-  color: black;
-  font-family: 'Raleway', sans-serif;
 }
 
 .btn-toolbar{

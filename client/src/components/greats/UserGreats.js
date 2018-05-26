@@ -1,9 +1,26 @@
 import React from 'react';
+import {Button, Glyphicon} from 'react-bootstrap/lib'
 
 const UserGreats = (props) => {
   const allUserGreats = props.userGreats.map((great, index) => {
     const id = great.id
-    return <div><p key={index} className="daily-great-all">{great.content}<br />created at {great.date_created}<br /><br /><button onClick={() => props.deleteUserGreat(id)}>Delete</button></p></div>
+    return (
+      <div key={index} className="Daily-Great-Container">
+        <div className="All-Greats-Header">
+          <div className="Daily-Great-Author">
+            </div>
+          </div>
+
+          <div className="Daily-Great-Created">
+            <div className="btn-toolbar">
+              <Glyphicon glyph="calendar" /> {great.date_created}
+            </div>
+          </div>
+
+        <p className="Daily-Great-Content">{great.content}</p>
+        <button className="btn btn-primary btn-xs" onClick={() => props.deleteUserGreat(id)}>Delete</button>
+      </div>
+    )
   })
 
   return(

@@ -6,12 +6,52 @@ const AllGreats = ({greats}) => {
   const loggedIn = !!localStorage.getItem("token")
 
   const mainGreats = greats.map((great, index) => {
-    return <div key={index} className="daily-great-all"><p className="Daily-Great-Intro">On {great.date_created} {great.user.username} says: </p><p>{great.content}</p></div>
+    return (
+      <div key={index} className="Daily-Great-Container">
+        <div className="All-Greats-Header">
+          <div className="Daily-Great-Author">
+            <div className="btn-toolbar">
+              <Glyphicon glyph="user" /> {great.user.username}
+            </div>
+          </div>
+          <div className="Daily-Great-Created">
+            <div className="btn-toolbar">
+              <Glyphicon glyph="calendar" /> {great.date_created}
+            </div>
+          </div>
+        </div>
+        <p className="Daily-Great-Content">
+          {great.content}
+        </p>
+      </div>
+    )
   })
 
   const userGreats = greats.map((great,index) => {
-    return <div key={index} className="daily-great-all"><p className="Daily-Great-Intro">On {great.date_created} {great.user.username} says: </p><p>{great.content}</p><div className="btn-toolbar"><Button bsSize="small"><Glyphicon glyph="thumbs-up" /> Like</Button><Button bsSize="small"><Glyphicon glyph="user" /> Follow</Button></div></div>
-  })
+    return (
+      <div key={index} className="Daily-Great-Container">
+        <div className="All-Greats-Header">
+          <div className="Daily-Great-Author">
+            <div className="btn-toolbar">
+              <Glyphicon glyph="user" /> {great.user.username}
+            </div>
+          </div>
+          <div className="Daily-Great-Created">
+            <div className="btn-toolbar">
+              <Glyphicon glyph="calendar" /> {great.date_created}
+            </div>
+          </div>
+        </div>
+        <p className="Daily-Great-Content">
+          {great.content}
+        </p>
+      <div className="btn-toolbar">
+        <Button bsSize="small"><Glyphicon glyph="thumbs-up" /> Like</Button>
+        <Button bsSize="small"><Glyphicon glyph="user" /> Follow</Button>
+      </div>
+    </div>
+  )
+})
 
     return (
       <div className="row">
