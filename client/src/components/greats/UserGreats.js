@@ -29,7 +29,7 @@ const UserGreats = (props) => {
       <div className="col-md-4">
         <div className="Past-Thankful">
           <br />
-          In the past you were thankful for... <br />
+          In the past you have been thankful for... <br />
         </div>
         {allUserGreats}
       </div>

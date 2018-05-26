@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserGreats from './../components/greats/UserGreats';
+import Header from './../components/headers/Header';
 import { NewUserGreat } from './NewUserGreat';
 import { fetchUserGreats, deleteUserGreatFromAPI } from './../actions/userGreats';
 import { connect } from 'react-redux';
@@ -20,6 +21,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
+        <Header />
         <NewUserGreat />
         <UserGreats userGreats={this.props.userGreats} deleteUserGreat={this.deleteUserGreat}/>
       </div>

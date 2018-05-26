@@ -3,6 +3,7 @@ import AllGreats from './../components/greats/AllGreats'
 import { fetchGreats } from './../actions/greats'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Header from './../components/headers/Header';
 
 class AllGreatsContainer extends Component {
 
@@ -13,6 +14,7 @@ class AllGreatsContainer extends Component {
   render() {
     return (
       <div>
+        <Header />
         <AllGreats greats={this.props.greats}/>
       </div>
     );

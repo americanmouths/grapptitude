@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Header from './components/headers/Header';
 import NavBar from './containers/NavBar';
 import LogInPage from './containers/LogInPage';
 import SignUpPage from './containers/SignUpPage';
@@ -15,7 +14,6 @@ class App extends Component {
     return (
     <Router>
       <div>
-          <Header />
           <NavBar />
         <Switch>
           <Route exact path="/" component={Greats} />
