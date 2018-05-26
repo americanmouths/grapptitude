@@ -2,10 +2,29 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom';
 import { logoutUser } from './../actions/userAuthorization'
-import { Navbar, Nav, MenuItem, NavItem, NavDropdown } from 'react-bootstrap/lib'
+import { Navbar, Nav, MenuItem, NavItem, NavDropdown, Modal, Button } from 'react-bootstrap/lib'
 import { Mindfuls } from './../containers/Mindfuls';
 
 class NavBar extends Component {
+  constructor (props, context) {
+    super(props, context);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      show: false
+    }
+  }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow(event) {
+    event.preventDefault();
+    this.setState({ show: true});
+  }
 
   logout(event){
     this.props.logoutUser();
@@ -18,6 +37,7 @@ class NavBar extends Component {
     const userNav = (
       <Nav pullRight>
         <NavItem eventKey={1} href="/">Main</NavItem>
+        <NavItem eventKey={2} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
         <NavItem eventKey={2} href="/home">Greats</NavItem>
         <NavItem eventKey={3} href="/calendar">Calendar</NavItem>
         <NavItem eventKey={4} href="/search">Search</NavItem>
@@ -34,8 +54,9 @@ class NavBar extends Component {
 
     const guestNav = (
       <Nav pullRight>
-        <NavItem eventKey={1} href="/signup">Sign Up</NavItem>
-        <NavItem eventKey={2} href="/login">Login</NavItem>
+        <NavItem eventKey={1} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
+        <NavItem eventKey={2} href="/signup">Sign Up</NavItem>
+        <NavItem eventKey={3} href="/login">Login</NavItem>
       </Nav>
     )
 
@@ -44,13 +65,20 @@ class NavBar extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <div className="mindful-header">
-                <Mindfuls />
-              </div>
+              <p>What are you thankful for?</p>
             </Navbar.Brand>
           </Navbar.Header>
             {loggedIn ? userNav : guestNav}
         </Navbar>
+        <Modal show={this.state.show} onHide={this.handleClose} className="modal-container">
+          <Modal.Header closeButton>
+          </Modal.Header>
+          <Modal.Body>
+            <Mindfuls />
+          </Modal.Body>
+          <Modal.Footer>
+          </Modal.Footer>
+        </Modal>
       </div>
     )
   }
