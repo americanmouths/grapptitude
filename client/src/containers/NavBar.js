@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { logoutUser } from './../actions/userAuthorization'
 import { Navbar, Nav, MenuItem, NavItem, NavDropdown, Modal, Button } from 'react-bootstrap/lib'
 import { Mindfuls } from './../containers/Mindfuls';
+import Greeting from './../components/headers/Greeting';
 
 class NavBar extends Component {
   constructor (props, context) {
@@ -33,6 +34,7 @@ class NavBar extends Component {
   render(){
 
     const loggedIn = !!localStorage.getItem("token")
+    const userName = localStorage.getItem("username")
 
     const userNav = (
       <Nav pullRight>
@@ -65,7 +67,7 @@ class NavBar extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <p>Grapptitude</p>
+              {userName ? <Greeting /> : <p>Grapptitude</p>}
             </Navbar.Brand>
           </Navbar.Header>
             {loggedIn ? userNav : guestNav}

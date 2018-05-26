@@ -4,10 +4,8 @@ const Greeting = () => {
   const name = localStorage.getItem("username")
 
   return (
-    <div className="row">
-      <div className="col-md-4"></div>
-      <div className="col-md-4 Welcome">Welcome {name}, what are you thankful for today?</div>
-      <div className="col-md-4"></div>
+    <div>
+      <p className="navbar-brand">Welcome {name}</p>
     </div>
   )
 };
