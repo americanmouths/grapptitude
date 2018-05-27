@@ -12,7 +12,8 @@ export default function userGreatsReducer(state = {
          userGreats: [action.payload, ...state.userGreats]
        }
     case 'DELETE_USER_DAILY_GREAT':
-      return{loading: false, ...state, userGreats: action.JSON.userGreats}
+      return {
+        loading: false, ...state, userGreats: action.JSON}
     default:
       return state;
   }
