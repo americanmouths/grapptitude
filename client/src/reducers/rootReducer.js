@@ -7,6 +7,7 @@ import { userAuthReducer } from './userAuthReducer';
 const rootReducer = combineReducers({
   mindfuls: mindfulsReducer,
   greats: greatsReducer,
+  likes: greatsReducer,
   userGreats: userGreatsReducer,
   userAuth: userAuthReducer
 });
