@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create] do
       resources :daily_greats
+      post '/daily_greats/:id/likes' => 'daily_greats#likes'
     end
 
     get '/daily_mindfuls' => 'daily_mindfuls#index'
