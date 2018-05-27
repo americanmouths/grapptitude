@@ -15,7 +15,7 @@ body {
 }
 
 div.App-title h1 {
-  font-size: 2.0em;
+  font-size: 2.3em;
   font-family: 'Satisfy', cursive;
   color: #2a4d69;
 }
@@ -45,11 +45,14 @@ div.App-title h1 {
 .All-Greats-Header {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .Daily-Great-Created,
-.Daily-Great-Author {
+.Daily-Great-Author,
+.Daily-Great-Remove {
   display: flex;
   flex-direction: column;
   color: #b44b52;
@@ -77,6 +80,10 @@ div.App-title h1 {
   padding-top: 25px;
 }
 
+.navbar-default .navbar-brand:hover {
+  color: #2a4d69;
+  padding-top: 25px;
+}
 .navbar-default .navbar-nav>li>a {
     color: white;
     font-family: 'Raleway', sans-serif;
@@ -88,7 +95,7 @@ div.App-title h1 {
     color: #afbfdd;
 }
 
-/* graptitude in navbar */
+/* graptitude & user greeting in navbar */
 .navbar-brand {
   text-align: center;
   font-family: 'Satisfy', cursive;
@@ -96,10 +103,6 @@ div.App-title h1 {
   margin: 0 auto;
 }
 
-navbar-brand:hover {
-  text-decoration: none;
-  color: #2a4d69;
-}
 
 /***Login***/
 
@@ -116,17 +119,6 @@ navbar-brand:hover {
   margin: auto;
 }
 
-
-/***Greeting***/
-
-.Welcome {
-  text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 2.2em;
-  margin: auto;
-  color: #2a4d69;
-}
-
 /***New User Great***/
 
 .New-User-Great {
@@ -141,7 +133,6 @@ navbar-brand:hover {
   text-decoration: none;
   padding: 10px;
   margin: auto;
-  margin-top: 20px;
   width: 300px;
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 1.2em;
@@ -152,7 +143,7 @@ navbar-brand:hover {
 
 .Past-Thankful {
   text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
+  font-family: 'Satisfy', cursive;
   font-size: 1.55em;
   margin: auto;
   color: #2a4d69;
