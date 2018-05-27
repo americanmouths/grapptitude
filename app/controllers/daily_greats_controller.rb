@@ -27,6 +27,13 @@ class DailyGreatsController < ApplicationController
     end
   end
 
+  def likes
+    user = current_user
+    dailygreat = DailyGreat.find_by(id: params[:daily_great_id])
+    user.like!(dailygreat)
+    render json: dailygreat, status: 200
+  end
+
   def update
     @dailygreat = DailyGreat.find_by(id: params[:id])
     @dailygreat.update(daily_great_params)
