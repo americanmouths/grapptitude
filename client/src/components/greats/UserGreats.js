@@ -7,9 +7,6 @@ const UserGreats = (props) => {
     return (
       <div key={index} className="Daily-Great-Container">
         <div className="All-Greats-Header">
-          <div className="Daily-Great-Author">
-            </div>
-          </div>
 
           <div className="Daily-Great-Created">
             <div className="btn-toolbar">
@@ -17,8 +14,14 @@ const UserGreats = (props) => {
             </div>
           </div>
 
+          <div className="Daily-Great-Remove">
+            <div className="btn-toolbar">
+              <Glyphicon glyph="remove" onClick={() => props.deleteUserGreat(id)} />
+            </div>
+          </div>
+
+        </div>
         <p className="Daily-Great-Content">{great.content}</p>
-        <button className="btn btn-primary btn-xs" onClick={() => props.deleteUserGreat(id)}>Delete</button>
       </div>
     )
   })
