@@ -56,23 +56,3 @@ export function deleteUserGreatFromAPI(greatId, token){
       }));
   };
 }
-
-export function likeUserGreat(greatId, token){
-  const id = localStorage.getItem("id")
-  return (dispatch) => {
-    dispatch({type: 'LIKING_USER_GREAT'});
-    return fetch(`/api/users/${id}/daily_greats/${greatId}/likes`, {
-      method: 'post',
-      body: JSON.stringify({daily_great_id: greatId}),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    }).then(response => response.json())
-      .then(JSON => dispatch({
-        type: 'LIKE_USER_DAILY_GREAT',
-        JSON: JSON
-      }));
-  };
-}
