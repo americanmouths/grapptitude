@@ -1,11 +1,11 @@
 import React from 'react';
 import {Button, Glyphicon} from 'react-bootstrap/lib'
 
-const AllGreats = ({greats}) => {
+const AllGreats = (props) => {
 
   const loggedIn = !!localStorage.getItem("token")
 
-  const mainGreats = greats.map((great, index) => {
+  const mainGreats = props.greats.map((great, index) => {
     return (
       <div key={index} className="Daily-Great-Container">
         <div className="All-Greats-Header">
@@ -27,7 +27,7 @@ const AllGreats = ({greats}) => {
     )
   })
 
-  const userGreats = greats.map((great,index) => {
+  const userGreats = props.greats.map((great,index) => {
     return (
       <div key={index} className="Daily-Great-Container">
         <div className="All-Greats-Header">
@@ -46,7 +46,7 @@ const AllGreats = ({greats}) => {
           {great.content}
         </p>
       <div className="btn-toolbar">
-        <Button bsSize="small"><Glyphicon glyph="thumbs-up" /> Like</Button>
+        <Button bsSize="small" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</Button>
         <Button bsSize="small"><Glyphicon glyph="user" /> Follow</Button>
       </div>
     </div>
