@@ -38,19 +38,13 @@ class NavBar extends Component {
 
     const userNav = (
       <Nav pullRight>
-        <NavItem eventKey={1} href="/">Main</NavItem>
+        <NavItem eventKey={1} href="/">Home</NavItem>
+        <NavItem eventKey={1} href="/liked_posts">Liked</NavItem>
         <NavItem eventKey={2} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
         <NavItem eventKey={2} href="/home">Greats</NavItem>
         <NavItem eventKey={3} href="/calendar">Calendar</NavItem>
         <NavItem eventKey={4} href="/search">Search</NavItem>
         <NavItem eventKey={5} href="/" onClick={this.logout.bind(this)}>Log Out</NavItem>
-        <NavDropdown eventKey={6} title="Dropdown" id="basic-nav-dropdown">
-          <MenuItem eventKey={6.1}>Action</MenuItem>
-          <MenuItem eventKey={6.2}>Another action</MenuItem>
-          <MenuItem eventKey={6.3}>Something else here</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey={6.4}>Separated link</MenuItem>
-        </NavDropdown>
       </Nav>
     )
 
