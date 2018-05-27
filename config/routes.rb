@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :users
+resources :users
+
   scope '/api' do
     post '/login' => 'sessions#create'
     post '/signup' => 'users#create'
-
     resources :users, only: [:create] do
+      get '/likes' => 'daily_greats#liked'
       resources :daily_greats
-      post '/daily_greats/:id/likes' => 'daily_greats#likes'
+      post '/daily_greats/:id/like' => 'daily_greats#like'
     end
 
     get '/daily_mindfuls' => 'daily_mindfuls#index'

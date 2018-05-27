@@ -13,11 +13,6 @@ class DailyGreatsController < ApplicationController
     end
   end
 
-  def show
-    @dailygreat = DailyGreat.find_by(id: params[:id])
-    render json: @dailygreat, status: 200
-  end
-
   def destroy
     if current_user
       dailygreat = DailyGreat.find_by(id: params[:daily_great_id])
@@ -27,11 +22,17 @@ class DailyGreatsController < ApplicationController
     end
   end
 
-  def likes
-    user = current_user
+  def like
+    user = User.find(params[:user_id])
     dailygreat = DailyGreat.find_by(id: params[:daily_great_id])
     user.like!(dailygreat)
     render json: dailygreat, status: 200
+  end
+
+  def liked
+    user = User.find(params[:user_id])
+    likedgreats = user.likees(DailyGreat)
+    render json: likedgreats, status: 200
   end
 
   def update
