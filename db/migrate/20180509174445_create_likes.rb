@@ -6,6 +6,7 @@ class CreateLikes < ActiveRecord::Migration[5.1]
       t.string  :likeable_type
       t.integer :likeable_id
       t.datetime :created_at
+      t.integer :likers_count
     end
 
     add_index :likes, ["liker_id", "liker_type"],       :name => "fk_likes"

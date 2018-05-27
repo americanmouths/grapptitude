@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20180512231920) do
     t.string "likeable_type"
     t.integer "likeable_id"
     t.datetime "created_at"
+    t.integer "likers_count"
     t.index ["likeable_id", "likeable_type"], name: "fk_likeables"
     t.index ["liker_id", "liker_type"], name: "fk_likes"
   end
