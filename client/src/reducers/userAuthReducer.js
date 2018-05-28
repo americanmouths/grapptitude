@@ -2,6 +2,7 @@ export function userAuthReducer(state = {
   currentUser: {},
   token: null,
   isLoading: false,
+  errors: {}
 }, action) {
   switch (action.type) {
     case 'LOADING_AUTH_REQ':
@@ -25,8 +26,9 @@ function setUser(state, json) {
     localStorage.setItem('id', json.user.id);
   }
   return {...state,
-    currentUser: json.user.username,
+    currentUser: json.user,
     token: json.token,
+    errors: json.errors,
     isLoading: false
   };
 }
