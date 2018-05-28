@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button, Glyphicon} from 'react-bootstrap/lib';
+import {Glyphicon} from 'react-bootstrap/lib';
 
 const FollowedUsers = ({users}) => {
 
-  const hasFollowedUsers = users.length >= 1
+  const hasFollowedUsers = users && users.length >= 1
 
   const followedUsers = users.map((great, index) => {
     return (
@@ -39,7 +39,7 @@ const FollowedUsers = ({users}) => {
       <div className="App">
         <div className="App-header">
           <div className="App-title">
-            <h1>Users you are following are greatful for...</h1>
+            <h1>Your followers are greatful for...</h1>
           </div>
         </div>
       </div>
