@@ -173,3 +173,9 @@ div.modal-body {
 button.close {
   color: white;
 }
+
+/*** Liking and Following Button Clicks ***/
+
+ button.btn.btn-sm.btn-default:focus{
+  background-color: gray;
+}
