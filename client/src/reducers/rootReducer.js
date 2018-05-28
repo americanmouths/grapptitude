@@ -8,6 +8,7 @@ const rootReducer = combineReducers({
   mindfuls: mindfulsReducer,
   greats: greatsReducer,
   likes: greatsReducer,
+  followedUsers: greatsReducer,
   userGreats: userGreatsReducer,
   userAuth: userAuthReducer
 });

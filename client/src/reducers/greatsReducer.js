@@ -1,4 +1,4 @@
-export default function greatsReducer(state = {loading: false, greats: [], likes: []}, action) {
+export default function greatsReducer(state = {loading: false, greats: [], likes: [], followedUsers: []}, action) {
   switch (action.type) {
     case 'FETCH_GREATS':
       return {loading: false, greats: action.payload}
@@ -10,6 +10,8 @@ export default function greatsReducer(state = {loading: false, greats: [], likes
       }
      case 'FETCH_USER_LIKES':
      return {loading: false, likes: action.payload}
+     case 'FOLLOW_USER':
+     return {loading: false, followedUsers: action.payload}
     default:
       return state;
   }
