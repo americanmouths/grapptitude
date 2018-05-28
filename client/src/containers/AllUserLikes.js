@@ -14,7 +14,7 @@ class AllUserLikesContainer extends Component {
   render() {
     return (
       <div>
-        <AllUserLikes likes={this.props.likes}/>
+        <AllUserLikes likes={this.props.likes} />
       </div>
     );
   }
