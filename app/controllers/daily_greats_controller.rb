@@ -35,7 +35,7 @@ class DailyGreatsController < ApplicationController
 
   def liked
     user = User.find(params[:user_id])
-    likedgreats = user.likees(DailyGreat)
+    likedgreats = user.likees(DailyGreat.order(id: :desc))
     render json: likedgreats, status: 200
   end
 
