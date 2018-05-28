@@ -22,10 +22,7 @@ export function likeUserGreatFromAPI(greatId, token){
         'Authorization': `Bearer ${token}`
       }
     }).then(response => response.json())
-      .then(JSON => dispatch({
-        type: 'LIKE_USER_DAILY_GREAT',
-        JSON: JSON
-      }));
+      .then(likes => dispatch({ type: 'LIKE_USER_DAILY_GREAT', payload: likes}));
   };
 }
 
