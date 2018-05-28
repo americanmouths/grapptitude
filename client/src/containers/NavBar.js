@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom';
 import { logoutUser } from './../actions/userAuthorization'
-import { Navbar, Nav, MenuItem, NavItem, NavDropdown, Modal, Button } from 'react-bootstrap/lib'
+import { Navbar, Nav, NavItem, Modal } from 'react-bootstrap/lib'
 import { Mindfuls } from './../containers/Mindfuls';
 import Greeting from './../components/headers/Greeting';
 
@@ -37,32 +36,37 @@ class NavBar extends Component {
     const userName = localStorage.getItem("username")
 
     const userNav = (
+      <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem eventKey={1} href="/home">Home</NavItem>
-          <NavItem eventKey={2} href="/">All</NavItem>
-          <NavItem eventKey={3} href="/followed_users">Following</NavItem>
-          <NavItem eventKey={4} href="/liked_posts">Liked Posts</NavItem>
+          <NavItem eventKey={1} href="/">All</NavItem>
+          <NavItem eventKey={2} href="/following">Following</NavItem>
+          <NavItem eventKey={3} href="/daily_great/liked">Liked</NavItem>
+          <NavItem eventKey={4} href="/daily_great/new">New</NavItem>
           <NavItem eventKey={5} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
           <NavItem eventKey={6} href="/" onClick={this.logout.bind(this)}>Log Out</NavItem>
         </Nav>
+      </Navbar.Collapse>
     )
 
     const guestNav = (
+      <Navbar.Collapse>
         <Nav pullRight>
           <NavItem eventKey={1} href="/">Main</NavItem>
           <NavItem eventKey={2} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
           <NavItem eventKey={3} href="/signup">Sign Up</NavItem>
           <NavItem eventKey={4} href="/login">Login</NavItem>
         </Nav>
+      </Navbar.Collapse>
     )
 
     return(
       <div>
-        <Navbar>
+        <Navbar collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
               {userName ? <Greeting /> : <p>Grapptitude</p>}
             </Navbar.Brand>
+            <Navbar.Toggle />
           </Navbar.Header>
             {loggedIn ? userNav : guestNav}
         </Navbar>
