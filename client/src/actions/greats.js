@@ -55,3 +55,17 @@ export function followUserAPI(greatId, token){
       .then(user => dispatch({ type: 'FOLLOW_USER', payload: user}));
   };
 }
+
+
+export function fetchFollowedUsers(){
+  const id = localStorage.getItem("id")
+  return (dispatch) => {
+    dispatch({type: 'LOADING_USERS'});
+    return fetch(`/api/users/${id}/followers`)
+    .then(response => response.json())
+      .then(users => dispatch({
+        type: 'FETCH_FOLLOWED_USERS',
+        payload: users
+      }));
+  };
+}
