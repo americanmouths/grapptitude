@@ -29,7 +29,7 @@ class DailyGreatsController < ApplicationController
       user.like!(dailygreat)
       render json: dailygreat, status: 200
     else
-      render json: dailygreat
+      render json: {errors: "You have already liked this post"}
     end
   end
 
@@ -43,8 +43,12 @@ class DailyGreatsController < ApplicationController
     current_user = User.find(params[:user_id])
     user_id = DailyGreat.find_by(id: params[:daily_great_id]).user_id
     user = User.find_by(id: user_id)
-    current_user.follow!(user)
-    render json: user, status: 200
+    if !current_user.follows?(user)
+      current_user.follow!(user)
+      render json: user, status: 200
+    else
+      render json: {errors: "You already follow this user"}
+    end
   end
 
   def followers
@@ -53,16 +57,4 @@ class DailyGreatsController < ApplicationController
     render json: followergreats, status: 200
   end
 
-  def update
-    @dailygreat = DailyGreat.find_by(id: params[:id])
-    @dailygreat.update(daily_great_params)
-    if @dailygreat.save && @dailygreat.valid
-      render json: @dailygreat, status: 200
-    end
-  end
-
-  private
-    def daily_great_params
-      params.require(:daily_great).permit(:user_id, :content)
-    end
 end
