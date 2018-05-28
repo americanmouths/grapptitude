@@ -73,6 +73,7 @@ div.App-title h1 {
 .navbar-default {
   background: #4b86b4;
   border: 2px solid #2a4d69;
+  padding: 10px;
 }
 
 .navbar-default .navbar-brand {
@@ -180,6 +181,11 @@ button.close {
   background-color: gray;
 }
 
+button.btn.btn-sm.btn-default:hover{
+ background-color: #4b86b4;
+}
+
+
 input {
   color: #2a4d69;
   border: 1px double #2a4d69;
@@ -192,4 +198,31 @@ input {
   font-size: 1.2em;
   background: white;
   text-align: center;
+}
+
+.No-Followed-Users,
+.No-User-Likes {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
+  color: #4b86b4;
+}
+
+.Login-Errors,
+.SignUp-Errors {
+  padding-top: 15px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
+  color: #b44b52;
+}
+
+.Already-Liked-Great,
+.Already-Follow-This-User {
+  text-align: center;
+  padding-top: 15px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.0em;
+  color: #b44b52;
 }
