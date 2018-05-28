@@ -53,7 +53,6 @@ class SignUpPage extends Component {
                 placeholder="username"
               />
               <br />
-              <br />
               <input
                 type="password"
                 name="password"

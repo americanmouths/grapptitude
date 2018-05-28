@@ -9,13 +9,13 @@ body {
 
 .App-header {
   background-color: #e7eff6;
-  height: 100px;
+  height: 90px;
   padding: 15px;
   color: white;
 }
 
 div.App-title h1 {
-  font-size: 2.3em;
+  font-size: 2.5em;
   font-family: 'Satisfy', cursive;
   color: #2a4d69;
 }
@@ -37,9 +37,10 @@ div.App-title h1 {
 
 .Daily-Great-Content {
   color: #2a4d69;
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 1.4em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
   padding-top: 17px;
+  border-top: 1px solid #D3D3D3;
 }
 
 .All-Greats-Header {
@@ -72,34 +73,34 @@ div.App-title h1 {
 .navbar-default {
   background: #4b86b4;
   border: 2px solid #2a4d69;
-  height: 75px;
 }
 
 .navbar-default .navbar-brand {
-  color: #2a4d69;
+  color: #e7eff6;
   padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .navbar-default .navbar-brand:hover {
-  color: #2a4d69;
+  color: #e7eff6;
   padding-top: 25px;
 }
 .navbar-default .navbar-nav>li>a {
     color: white;
     font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding-top: 25px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    color: #afbfdd;
+    color: #2a4d69;
 }
 
 /* graptitude & user greeting in navbar */
 .navbar-brand {
   text-align: center;
   font-family: 'Satisfy', cursive;
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin: 0 auto;
 }
 
@@ -107,11 +108,10 @@ div.App-title h1 {
 /***Login***/
 
 .Login, .Sign-Up {
-  font-size: 2.5em;
-  text-decoration: underline;
+  font-size: 2.8em;
   text-align: center;
-  font-family: 'Raleway', cursive;
-  color: #4b86b4;
+  font-family: 'Satisfy', cursive;
+  color: #2a4d69;
 }
 
 .Login-Form, .Sign-Up-Form {
@@ -127,14 +127,14 @@ div.App-title h1 {
 }
 
 .User-Great-Text-Area {
-  color: #63ace5;
+  color: #2a4d69;
   border: 1px double #2a4d69;
   display: block;
   text-decoration: none;
   padding: 10px;
   margin: auto;
   width: 300px;
-  font-family: 'Shadows Into Light Two', cursive;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.2em;
   background: white;
   text-align: center;
@@ -162,20 +162,34 @@ div.App-title h1 {
 div.modal-header,
 div.modal-footer,
 div.modal-body {
-  background: #42759e;
+  background: #e7eff6;
   border: none;
   text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 1.55em;
-  color: white;
+  font-family: 'Satisfy', cursive;
+  font-size: 2.5em;
+  color: #2a4d69;
 }
 
 button.close {
-  color: white;
+  color: black;
 }
 
 /*** Liking and Following Button Clicks ***/
 
  button.btn.btn-sm.btn-default:focus{
   background-color: gray;
+}
+
+input {
+  color: #2a4d69;
+  border: 1px double #2a4d69;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin: auto;
+  width: 200px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  background: white;
+  text-align: center;
 }

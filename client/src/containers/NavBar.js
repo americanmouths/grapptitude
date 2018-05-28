@@ -37,23 +37,23 @@ class NavBar extends Component {
     const userName = localStorage.getItem("username")
 
     const userNav = (
-      <Nav pullRight>
-        <NavItem eventKey={1} href="/">Home</NavItem>
-        <NavItem eventKey={1} href="/liked_posts">Liked</NavItem>
-        <NavItem eventKey={2} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
-        <NavItem eventKey={2} href="/home">Greats</NavItem>
-        <NavItem eventKey={3} href="/calendar">Calendar</NavItem>
-        <NavItem eventKey={4} href="/search">Search</NavItem>
-        <NavItem eventKey={5} href="/" onClick={this.logout.bind(this)}>Log Out</NavItem>
-      </Nav>
+        <Nav pullRight>
+          <NavItem eventKey={1} href="/home">Home</NavItem>
+          <NavItem eventKey={2} href="/">All</NavItem>
+          <NavItem eventKey={3} href="/followed_users">Following</NavItem>
+          <NavItem eventKey={4} href="/liked_posts">Liked Posts</NavItem>
+          <NavItem eventKey={5} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
+          <NavItem eventKey={6} href="/" onClick={this.logout.bind(this)}>Log Out</NavItem>
+        </Nav>
     )
 
     const guestNav = (
-      <Nav pullRight>
-        <NavItem eventKey={1} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
-        <NavItem eventKey={2} href="/signup">Sign Up</NavItem>
-        <NavItem eventKey={3} href="/login">Login</NavItem>
-      </Nav>
+        <Nav pullRight>
+          <NavItem eventKey={1} href="/">Main</NavItem>
+          <NavItem eventKey={2} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
+          <NavItem eventKey={3} href="/signup">Sign Up</NavItem>
+          <NavItem eventKey={4} href="/login">Login</NavItem>
+        </Nav>
     )
 
     return(
