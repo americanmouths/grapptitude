@@ -3,6 +3,12 @@ import {Button, Glyphicon} from 'react-bootstrap/lib'
 
 const AllGreats = (props) => {
 
+  const hasErrors = props.errors && props.errors.length >= 1;
+
+  const errors = (
+    <p className="Great-Errors">{props.errors[0]}</p>
+  )
+
   const loggedIn = !!localStorage.getItem("token")
 
   const mainGreats = props.greats.map((great, index) => {
@@ -56,7 +62,7 @@ const AllGreats = (props) => {
     return (
       <div className="row">
         <div className="col-md-4"></div>
-        <div className="col-md-4">{loggedIn ? userGreats : mainGreats}</div>
+        <div className="col-md-4">{hasErrors ? errors : null} {loggedIn ? userGreats : mainGreats}</div>
         <div className="col-md-4"></div>
       </div>
     )
