@@ -27,6 +27,13 @@ class LogInPage extends Component {
   componentWillReceiveProps(nextProps) {
     if (!!nextProps.token) {
       this.props.history.push('/home')
+    };
+
+    if (nextProps.errors) {
+      this.setState({
+        username: '',
+        password: ''
+      });
     } else {
       this.setState({
         username: '',
@@ -37,7 +44,7 @@ class LogInPage extends Component {
 
   render() {
     const { username, password } = this.state
-
+    const errors = this.props.errors
     return (
       <div className="row">
         <div className="col-md-4">
@@ -65,6 +72,7 @@ class LogInPage extends Component {
               <br />
               <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
             </form>
+            {errors ? <div className="Login-Errors">{errors.user}</div> : null}
           </div>
 
           <div className="col-md-4">
@@ -77,6 +85,7 @@ class LogInPage extends Component {
 function mapStateToProps(state) {
   return {
     token: state.userAuth.token,
+    errors: state.userAuth.errors
   }
 }
 

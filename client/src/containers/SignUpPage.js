@@ -31,11 +31,25 @@ class SignUpPage extends Component {
   componentWillReceiveProps(props) {
     if (!!props.token) {
       this.props.history.push('/home')
+    };
+
+    if (props.errors) {
+      this.setState({
+        username: '',
+        password: ''
+      });
+    } else {
+      this.setState({
+        username: '',
+        password: ''
+      });
     }
   }
 
+
   render() {
     const { username, password } = this.state
+    const errors = this.props.errors
 
     return (
       <div className="row">
@@ -64,8 +78,8 @@ class SignUpPage extends Component {
               <br />
               <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
             </form>
+            {errors ? <div className="Login-Errors">{errors.user}</div> : null}
           </div>
-
           <div className="col-md-4">
           </div>
       </div>
@@ -76,6 +90,7 @@ class SignUpPage extends Component {
 function mapStateToProps(state) {
   return {
     token: state.userAuth.token,
+    errors: state.userAuth.errors
   }
 }
 
