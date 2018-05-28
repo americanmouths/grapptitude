@@ -47,7 +47,7 @@ const AllGreats = (props) => {
         </p>
       <div className="btn-toolbar">
         <Button bsSize="small" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</Button>
-        <Button bsSize="small"><Glyphicon glyph="user" /> Follow</Button>
+        <Button bsSize="small" onClick={() => props.followUser(great.id)}><Glyphicon glyph="user" /> Follow</Button>
       </div>
     </div>
   )
