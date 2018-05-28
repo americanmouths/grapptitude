@@ -7,8 +7,10 @@ resources :users
     post '/signup' => 'users#create'
     resources :users, only: [:create] do
       get '/likes' => 'daily_greats#liked'
+      get '/followers' => 'daily_greats#followers'
       resources :daily_greats
       post '/daily_greats/:id/like' => 'daily_greats#like'
+      post '/daily_greats/:id/follow' => 'daily_greats#follow'
     end
 
     get '/daily_mindfuls' => 'daily_mindfuls#index'

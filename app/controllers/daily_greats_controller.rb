@@ -39,6 +39,19 @@ class DailyGreatsController < ApplicationController
     render json: likedgreats, status: 200
   end
 
+  def follow
+    user_id = DailyGreat.find_by(id: params[:daily_great_id]).user_id
+    user = User.find(id: user_id)
+    current_user.follow!(user)
+    render json: user, status: 200
+  end
+
+  def followers
+    user = User.find(params[:user_id])
+    followergreats = DailyGreat.where(id: user.followees(User).map(&:id))
+    render json: followergreats, status: 200
+  end
+
   def update
     @dailygreat = DailyGreat.find_by(id: params[:id])
     @dailygreat.update(daily_great_params)
