@@ -6,7 +6,7 @@ export default function greatsReducer(state = {loading: false, greats: [], likes
       return {
         loading: false,
         ...state,
-        likes: [action.JSON, ...state.likes]
+        likes: [action.payload]
       }
      case 'FETCH_USER_LIKES':
      return {loading: false, likes: action.payload}
