@@ -38,3 +38,20 @@ export function fetchUserLikes(){
       }));
   };
 }
+
+export function followUserAPI(greatId, token){
+  const id = localStorage.getItem("id")
+  return (dispatch) => {
+    dispatch({type: 'FOLLOWING_USER'});
+    return fetch(`/api/users/${id}/daily_greats/${greatId}/follow`, {
+      method: 'post',
+      body: JSON.stringify({daily_great_id: greatId}),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(response => response.json())
+      .then(user => dispatch({ type: 'FOLLOW_USER', payload: user}));
+  };
+}
