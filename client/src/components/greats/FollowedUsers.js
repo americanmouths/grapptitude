@@ -3,6 +3,8 @@ import {Button, Glyphicon} from 'react-bootstrap/lib';
 
 const FollowedUsers = ({users}) => {
 
+  const hasFollowedUsers = users.length >= 1
+
   const followedUsers = users.map((great, index) => {
     return (
       <div key={index} className="Daily-Great-Container">
@@ -25,16 +27,23 @@ const FollowedUsers = ({users}) => {
     )
   })
 
+  const noFollowedUsers = (
+    <div className="No-Followed-Users">
+      <p>Get started by following some users</p>
+      <a className="btn btn-primary" href="/">All</a>
+    </div>
+  )
+
   return(
     <div>
       <div className="App">
         <div className="App-header">
           <div className="App-title">
-            <h1>Things users you are following are greatful for...</h1>
+            <h1>Users you are following are greatful for...</h1>
           </div>
         </div>
       </div>
-      {followedUsers}
+      {hasFollowedUsers ? followedUsers : noFollowedUsers}
     </div>
   )
 }

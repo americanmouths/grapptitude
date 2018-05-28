@@ -3,6 +3,8 @@ import {Button, Glyphicon} from 'react-bootstrap/lib';
 
 const AllUserLikes = ({likes}) => {
 
+  const hasUserLikes = likes.length >= 1
+
   const userLikes = likes.map((great, index) => {
     return (
       <div key={index} className="Daily-Great-Container">
@@ -25,6 +27,13 @@ const AllUserLikes = ({likes}) => {
     )
   })
 
+  const noUserLikes = (
+    <div className="No-User-Likes">
+      <p>Get started by liking some posts...</p>
+      <a className="btn btn-primary" href="/">All</a>
+    </div>
+  )
+
   return(
     <div>
       <div className="App">
@@ -34,7 +43,7 @@ const AllUserLikes = ({likes}) => {
           </div>
         </div>
       </div>
-      {userLikes}
+      {hasUserLikes ? userLikes : noUserLikes}
     </div>
   )
 }
