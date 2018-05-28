@@ -24,9 +24,13 @@ class DailyGreatsController < ApplicationController
 
   def like
     user = User.find(params[:user_id])
-    dailygreat = DailyGreat.find_by(id: params[:daily_great_id])
-    user.like!(dailygreat)
-    render json: dailygreat, status: 200
+    dailygreat = DailyGreat.find(params[:id])
+    if dailygreat.is_likeable? && !user.likees(DailyGreat).include?(dailygreat)
+      user.like!(dailygreat)
+      render json: dailygreat, status: 200
+    else
+      render json: dailygreat
+    end
   end
 
   def liked
