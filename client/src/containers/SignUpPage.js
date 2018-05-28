@@ -78,7 +78,7 @@ class SignUpPage extends Component {
               <br />
               <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
             </form>
-            {errors ? <div className="Login-Errors">{errors.user}</div> : null}
+            {errors ? <div className="SignUp-Errors">{errors.user}</div> : null}
           </div>
           <div className="col-md-4">
           </div>
