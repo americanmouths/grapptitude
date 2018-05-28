@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Glyphicon} from 'react-bootstrap/lib'
+import {Glyphicon} from 'react-bootstrap/lib'
 
 const UserGreats = (props) => {
   const allUserGreats = props.userGreats.map((great, index) => {
