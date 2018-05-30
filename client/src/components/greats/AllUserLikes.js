@@ -36,12 +36,8 @@ const AllUserLikes = ({likes}) => {
 
   return(
     <div>
-      <div className="App">
-        <div className="App-header">
-          <div className="App-title">
-            <h1>Posts you have liked...</h1>
-          </div>
-        </div>
+      <div className="App-header">
+        <h1>Posts you have liked...</h1>
       </div>
       {hasUserLikes ? userLikes : noUserLikes}
     </div>

@@ -4,26 +4,18 @@ import {Button, Glyphicon} from 'react-bootstrap/lib'
 const AllGreats = (props) => {
 
   const hasErrors = props.errors && props.errors.length >= 1;
-
-  const errors = (
-    <p className="Great-Errors">{props.errors[0]}</p>
-  )
-
+  const errors = (<p className="Great-Errors">{props.errors[0]}</p>)
   const loggedIn = !!localStorage.getItem("token")
 
   const mainGreats = props.greats.map((great, index) => {
     return (
       <div key={index} className="Daily-Great-Container">
         <div className="All-Greats-Header">
-          <div className="Daily-Great-Author">
-            <div className="btn-toolbar">
-              <Glyphicon glyph="user" /> {great.user.username}
-            </div>
+          <div className="Daily-Great-Author btn-toolbar">
+            <Glyphicon glyph="user" /> {great.user.username}
           </div>
-          <div className="Daily-Great-Created">
-            <div className="btn-toolbar">
-              <Glyphicon glyph="calendar" /> {great.date_created}
-            </div>
+          <div className="Daily-Great-Created btn-toolbar">
+            <Glyphicon glyph="calendar" /> {great.date_created}
           </div>
         </div>
         <p className="Daily-Great-Content">
@@ -37,15 +29,11 @@ const AllGreats = (props) => {
     return (
       <div key={index} className="Daily-Great-Container">
         <div className="All-Greats-Header">
-          <div className="Daily-Great-Author">
-            <div className="btn-toolbar">
-              <Glyphicon glyph="user" /> {great.user.username}
-            </div>
+          <div className="Daily-Great-Author btn-toolbar">
+            <Glyphicon glyph="user" /> {great.user.username}
           </div>
-          <div className="Daily-Great-Created">
-            <div className="btn-toolbar">
-              <Glyphicon glyph="calendar" /> {great.date_created}
-            </div>
+          <div className="Daily-Great-Created btn-toolbar">
+            <Glyphicon glyph="calendar" /> {great.date_created}
           </div>
         </div>
         <p className="Daily-Great-Content">
