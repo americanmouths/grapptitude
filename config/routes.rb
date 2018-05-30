@@ -8,6 +8,7 @@ resources :users
     resources :users, only: [:create] do
       get '/likes' => 'daily_greats#liked'
       get '/followers' => 'daily_greats#followers'
+      get '/followees' => 'daily_greats#followees'
       resources :daily_greats
       post '/daily_greats/:id/like' => 'daily_greats#like'
       post '/daily_greats/:id/follow' => 'daily_greats#follow'
