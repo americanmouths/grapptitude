@@ -5,36 +5,33 @@ import FolloweeGreatDisplay from './FolloweeGreatDisplay';
 const Followees = (props) => {
 
   const hasFollowees = props.followees && props.followees.length >= 1
-
+  const noFollowees = (
+      <div className="No-Followed-Users">
+        <p>Looks like no one follows you yet...</p>
+      </div>
+    )
   const userFollowees = props.followees.map((followee, index) => {
     return (
       <div key={index} className="Daily-Great-Container">
         <div className="All-Greats-Header">
-          <div className="Daily-Great-Author">
-            <div className="btn-toolbar">
-              <Glyphicon glyph="user" /> {followee.username}
-              <FolloweeGreatDisplay followee={followee.daily_greats} />
-            </div>
+          <div className="Daily-Great-Author btn-toolbar">
+            <Glyphicon glyph="user" /> {followee.username}
+          </div>
+          <div className="Daily-Great-Created btn-toolbar">
+            <a href="#" onClick={() => this.props.followFollowee(followee.daily_greats[0].id)}><Glyphicon glyph="plus" />Follow</a>
           </div>
         </div>
+        <p className="Daily-Great-Content">
+          <FolloweeGreatDisplay followee={followee.daily_greats} />
+        </p>
       </div>
     )
   })
 
-  const noFollowees = (
-    <div className="No-Followed-Users">
-      <p>Looks like no one follows you yet...</p>
-    </div>
-  )
-
-  return(
+  return (
     <div>
-      <div className="App">
-        <div className="App-header">
-          <div className="App-title">
-            <h1>People following you...</h1>
-          </div>
-        </div>
+      <div className="App-header">
+        <h1>People following you...</h1>
       </div>
       {hasFollowees ? userFollowees : noFollowees}
     </div>
