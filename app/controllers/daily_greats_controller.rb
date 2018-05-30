@@ -57,4 +57,14 @@ class DailyGreatsController < ApplicationController
     render json: followergreats, status: 200
   end
 
+  def followees
+    current_user = User.find(params[:user_id])
+    if !current_user.followers(User).nil?
+      followees = current_user.followers(User)
+      render json: followees, status: 200
+    else
+      render json: {errors: "You don't have any followers yet"}
+    end
+  end
+
 end
