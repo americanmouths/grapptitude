@@ -69,3 +69,16 @@ export function fetchFollowedUsers(){
       }));
   };
 }
+
+export function fetchFollowees(){
+  const id = localStorage.getItem("id")
+  return (dispatch) => {
+    dispatch({type: 'LOADING_FOLLOWEES'});
+    return fetch(`/api/users/${id}/followees`)
+    .then(response => response.json())
+      .then(followees => dispatch({
+        type: 'FETCH_FOLLOWEES',
+        payload: followees
+      }));
+  };
+}
