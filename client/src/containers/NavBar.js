@@ -40,6 +40,7 @@ class NavBar extends Component {
         <Nav pullRight>
           <NavItem eventKey={1} href="/">All</NavItem>
           <NavItem eventKey={2} href="/following">Following</NavItem>
+          <NavItem eventKey={3} href="/followees">Followees</NavItem>
           <NavItem eventKey={3} href="/daily_great/liked">Liked</NavItem>
           <NavItem eventKey={4} href="/daily_great/new">New</NavItem>
           <NavItem eventKey={5} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
@@ -68,8 +69,9 @@ class NavBar extends Component {
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
-            {loggedIn ? userNav : guestNav}
+          {loggedIn ? userNav : guestNav}
         </Navbar>
+
         <Modal show={this.state.show} onHide={this.handleClose} className="modal-container">
           <Modal.Header closeButton>
           </Modal.Header>
