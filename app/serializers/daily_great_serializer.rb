@@ -1,5 +1,5 @@
 class DailyGreatSerializer < ActiveModel::Serializer
-  attributes :id, :content, :date_created, :likers_count
+  attributes :id, :content, :date_created, :likers_count, :user_id
   belongs_to :user
 
   def date_created
