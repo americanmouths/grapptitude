@@ -19,7 +19,7 @@ export function likeUserGreatFromAPI(greatId, token){
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `${token}`
       }
     }).then(response => response.json())
       .then(likes => dispatch({ type: 'LIKE_USER_DAILY_GREAT', payload: likes}));
@@ -49,7 +49,7 @@ export function followUserAPI(userId, token){
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `${token}`
       }
     }).then(response => response.json())
       .then(user => dispatch({ type: 'FOLLOW_USER', payload: user}));

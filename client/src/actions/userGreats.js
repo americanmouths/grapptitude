@@ -10,7 +10,7 @@ export function fetchUserGreats() {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `${token}`
       }
     })
       .then(response => response.json())
@@ -30,7 +30,7 @@ export function newUserGreat(userGreatData) {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `${token}`
       }
     }).then(response => response.json())
       .then(userGreats => dispatch({ type: 'ADD_USER_DAILY_GREAT', payload: userGreats }));
@@ -47,7 +47,7 @@ export function deleteUserGreatFromAPI(greatId, token){
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `${token}`
       }
     }).then(response => response.json())
       .then(JSON => dispatch({

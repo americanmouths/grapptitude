@@ -1,15 +1,16 @@
 class DailyGreatsController < ApplicationController
 
   def index
-    user = User.find(params[:user_id])
-    dailygreats = user.daily_greats.order(id: :desc)
+    dailygreats = current_user.daily_greats.order(id: :desc)
     render json: dailygreats, status: 200
   end
 
   def create
-    dailygreat = DailyGreat.create(content: params[:content], user_id: params[:user_id])
-    if dailygreat.save
-      render json: dailygreat, status: 200
+    if current_user
+      dailygreat = DailyGreat.create(content: params[:content], user_id: params[:user_id])
+      if dailygreat.save
+        render json: dailygreat, status: 200
+      end
     end
   end
 
@@ -23,10 +24,9 @@ class DailyGreatsController < ApplicationController
   end
 
   def like
-    user = User.find(params[:user_id])
     dailygreat = DailyGreat.find(params[:id])
-    if dailygreat.is_likeable? && !user.likees(DailyGreat).include?(dailygreat)
-      user.like!(dailygreat)
+    if dailygreat.is_likeable? && !current_user.likees(DailyGreat).include?(dailygreat)
+      current_user.like!(dailygreat)
       render json: {
         dailygreat: dailygreat,
         errors: "Liked!"

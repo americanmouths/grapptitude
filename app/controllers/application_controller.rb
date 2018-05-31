@@ -2,22 +2,14 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
   def issue_token(payload)
-    JWT.encode(payload, "secretcode")
+    JWT.encode(payload, "supersecretcode")
   end
 
   def current_user
-    authenticate_or_request_with_http_token do |jwt_token, options|
-      begin
-        decoded_token = JWT.decode(jwt_token, "secretcode")
-
-      rescue JWT::DecodeError
-        return nil
-      end
-
-      if decoded_token[0]["user_id"]
-        @current_user ||= User.find(decoded_token[0]["user_id"])
-      else
-      end
+    if token = request.headers["Authorization"]
+      decoded_token = JWT.decode(token, "supersecretcode", true, {algorithm: "HS256"})
+      user_id = decoded_token[0]["user_id"]
+      User.find_by(id: user_id)
     end
   end
 
