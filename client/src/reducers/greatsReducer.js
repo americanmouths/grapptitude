@@ -40,7 +40,8 @@ export default function greatsReducer(state = {
      case 'FETCH_FOLLOWEES':
       return {
         loading: false,
-        followees: action.payload
+        followees: action.payload,
+        errors: [action.payload.errors]
       }
     default:
       return state;
