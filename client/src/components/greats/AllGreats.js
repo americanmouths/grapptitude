@@ -1,8 +1,9 @@
 import React from 'react';
-import {Button, Glyphicon} from 'react-bootstrap/lib'
+import { Button, Glyphicon } from 'react-bootstrap/lib';
+import { GreatContainer, Author, DateCreated, DailyGreatContent } from '../../theme/style';
 
 const AllGreats = (props) => {
-  debugger;
+
   const hasErrors = props.errors && props.errors.length >= 1;
   const errors = (
     <p className="Great-Errors">{props.errors[0]}</p>
@@ -11,41 +12,39 @@ const AllGreats = (props) => {
 
   const mainGreats = props.greats.map((great, index) => {
     return (
-      <div key={index} className="Daily-Great-Container">
-        <div className="All-Greats-Header">
-          <div className="Daily-Great-Author btn-toolbar">
+      <div key={index}>
+        <GreatContainer>
+          <Author>
             <Glyphicon glyph="user" /> {great.user.username}
-          </div>
-          <div className="Daily-Great-Created btn-toolbar">
+          </Author>
+          <DateCreated>
             <Glyphicon glyph="calendar" /> {great.date_created}
-          </div>
-        </div>
-        <p className="Daily-Great-Content">
-          {great.content}
-        </p>
+          </DateCreated>
+          <DailyGreatContent>
+            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+          </DailyGreatContent>
+        </GreatContainer>
       </div>
     )
   })
 
   const userGreats = props.greats.map((great,index) => {
     return (
-      <div key={index} className="Daily-Great-Container">
-        <div className="All-Greats-Header">
-          <div className="Daily-Great-Author btn-toolbar">
+      <div key={index}>
+        <GreatContainer>
+          <Author>
             <Glyphicon glyph="user" /> {great.user.username}
-          </div>
-          <div className="Daily-Great-Created btn-toolbar">
+          </Author>
+          <DateCreated>
             <Glyphicon glyph="calendar" /> {great.date_created}
-          </div>
-        </div>
-        <p className="Daily-Great-Content">
-          {great.content}
-        </p>
-      <div className="btn-toolbar">
-        <Button bsSize="small" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</Button>
-        <Button bsSize="small" onClick={() => props.followUser(great.user_id)}><Glyphicon glyph="user" /> Follow</Button>
+          </DateCreated>
+          <DailyGreatContent>
+            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+          </DailyGreatContent>
+          <Button bsSize="small" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</Button>
+          <Button bsSize="small" onClick={() => props.followUser(great.user_id)}><Glyphicon glyph="user" /> Follow</Button>
+        </GreatContainer>
       </div>
-    </div>
   )
 })
 

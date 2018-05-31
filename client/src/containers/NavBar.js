@@ -38,7 +38,7 @@ class NavBar extends Component {
     const userNav = (
       <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem eventKey={1} href="/">All</NavItem>
+          <NavItem eventKey={1} href="/main">All</NavItem>
           <NavItem eventKey={2} href="/following">Following</NavItem>
           <NavItem eventKey={3} href="/followees">Followees</NavItem>
           <NavItem eventKey={3} href="/daily_great/liked">Liked</NavItem>
@@ -52,7 +52,7 @@ class NavBar extends Component {
     const guestNav = (
       <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem eventKey={1} href="/">Main</NavItem>
+          <NavItem eventKey={1} href="/main">Main</NavItem>
           <NavItem eventKey={2} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
           <NavItem eventKey={3} href="/signup">Sign Up</NavItem>
           <NavItem eventKey={4} href="/login">Login</NavItem>

@@ -2,7 +2,7 @@ import { injectGlobal } from 'styled-components'
 import img from '../assets/background.jpg';
 
 injectGlobal`
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto|Satisfy');
 
   body {
     padding: 0;
@@ -23,7 +23,14 @@ injectGlobal`
 
   .navbar-default .navbar-brand {
     color: #FDF5F2;
-    font-family: Montserrat, sans-serif;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    color: #FDF5F2;
+  }
+
+  .navbar-default .navbar-nav>li>a:hover {
+      color: gray;
   }
 
   .modal-container .modal, .modal-container .modal-backdrop {
@@ -43,5 +50,9 @@ injectGlobal`
 
   button.close {
     color: white;
+  }
+
+  h1 {
+    font-size: 4.5em;
   }
 `
