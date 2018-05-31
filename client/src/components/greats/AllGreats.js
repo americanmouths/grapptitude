@@ -2,9 +2,11 @@ import React from 'react';
 import {Button, Glyphicon} from 'react-bootstrap/lib'
 
 const AllGreats = (props) => {
-
+  debugger;
   const hasErrors = props.errors && props.errors.length >= 1;
-  const errors = (<p className="Great-Errors">{props.errors[0]}</p>)
+  const errors = (
+    <p className="Great-Errors">{props.errors[0]}</p>
+  )
   const loggedIn = !!localStorage.getItem("token")
 
   const mainGreats = props.greats.map((great, index) => {
@@ -41,7 +43,7 @@ const AllGreats = (props) => {
         </p>
       <div className="btn-toolbar">
         <Button bsSize="small" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</Button>
-        <Button bsSize="small" onClick={() => props.followUser(great.id)}><Glyphicon glyph="user" /> Follow</Button>
+        <Button bsSize="small" onClick={() => props.followUser(great.user_id)}><Glyphicon glyph="user" /> Follow</Button>
       </div>
     </div>
   )

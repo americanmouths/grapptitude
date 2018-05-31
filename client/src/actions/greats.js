@@ -39,13 +39,13 @@ export function fetchUserLikes(){
   };
 }
 
-export function followUserAPI(greatId, token){
+export function followUserAPI(userId, token){
   const id = localStorage.getItem("id")
   return (dispatch) => {
     dispatch({type: 'FOLLOWING_USER'});
-    return fetch(`/api/users/${id}/daily_greats/${greatId}/follow`, {
+    return fetch(`/api/users/${id}/follow`, {
       method: 'post',
-      body: JSON.stringify({daily_great_id: greatId}),
+      body: JSON.stringify({followee_id: userId}),
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',

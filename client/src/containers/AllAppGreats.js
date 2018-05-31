@@ -16,9 +16,9 @@ class AllGreatsContainer extends Component {
     this.props.likeUserGreatFromAPI(userGreatId, token)
   }
 
-  followUser = (userGreatId) => {
+  followUser = (userId) => {
     const token = localStorage.getItem('token')
-    this.props.followUserAPI(userGreatId, token)
+    this.props.followUserAPI(userId, token)
   }
 
 

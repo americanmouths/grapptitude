@@ -11,15 +11,15 @@ class UserFolloweesContainer extends Component {
     this.props.fetchFollowees();
   }
 
-  followFollowee = (userGreatId) => {
+  followFollowee = (userId) => {
     const token = localStorage.getItem('token')
-    this.props.followUserAPI(userGreatId, token)
+    this.props.followUserAPI(userId, token)
   }
 
   render() {
     return (
       <div>
-        <Followees followees={this.props.followees} followFollowee={this.followFollowee} />
+        <Followees followees={this.props.followees} followFollowee={this.followFollowee} errors={this.props.errors}/>
       </div>
     );
   }
@@ -27,7 +27,8 @@ class UserFolloweesContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    followees: state.followees.followees
+    followees: state.followees.followees,
+    errors: state.greats.errors
   }
 }
 
