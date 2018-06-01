@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-/* import './App.css'; */
 import './theme/globalStyles.js';
 import NavBar from './containers/NavBar';
+import Header from './components/headers/Header';
 import LogInPage from './containers/LogInPage';
 import SignUpPage from './containers/SignUpPage';
 import { UsersHome } from './containers/UsersHome';
@@ -10,8 +10,6 @@ import { AllAppGreats } from './containers/AllAppGreats';
 import { Likes } from './containers/AllUserLikes';
 import { AllUserGreats } from './containers/AllUserGreats';
 import { UserFollowees } from './containers/AllUserFollowees';
-import { Paragraph } from './theme/style.js';
-import styled from 'styled-components';
 
 
 class App extends Component {
@@ -22,7 +20,7 @@ class App extends Component {
       <div>
         <NavBar />
         <Switch>
-          {/*<Route exact path="/" component={AllAppGreats} />*/}
+          <Route exact path="/" component={Header} />
           <Route exact path="/main" component={AllAppGreats} />
           <Route exact path="/home" component={UsersHome} />
           <Route exact path="/login" component={LogInPage} />

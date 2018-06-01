@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { newUserGreat } from './../actions/userGreats';
 import { bindActionCreators } from 'redux';
+import { FormContainer } from './../theme/style';
 
 class NewUserGreatContainer extends Component {
   constructor() {
@@ -41,21 +42,22 @@ class NewUserGreatContainer extends Component {
         </div>
 
         <div className="col-md-4">
-          <br />
-          <form onSubmit={(event) => this.handleSubmit(event)} className="New-User-Great">
-            <textarea
-              rows="3"
-              cols="40"
-              type="text"
-              name="content"
-              value={this.state.content}
-              onChange={(event) => this.handleChange(event)}
-              placeholder="I'm thankful for..."
-              className="User-Great-Text-Area"
-            />
-            <br />
-            <button className="btn btn-primary">Submit</button>
-          </form>
+          <FormContainer>
+            <form onSubmit={(event) => this.handleSubmit(event)}>
+              <textarea
+                rows="3"
+                cols="40"
+                type="text"
+                name="content"
+                value={this.state.content}
+                onChange={(event) => this.handleChange(event)}
+                placeholder="I'm thankful for..."
+                className="User-Great-Text-Area"
+              />
+              <br />
+              <button>Submit</button>
+            </form>
+          </FormContainer>
         </div>
 
         <div className="col-md-4">

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       token = issue_token({user_id: user.id})
       render json: { user: user, token: token }
     else
-      render json: { errors: { user: "Usernames must be unique, please try again." }}
+      render json: { errors: { user: "Please enter a valid username & password." }}
     end
   end
 

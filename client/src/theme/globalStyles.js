@@ -52,6 +52,11 @@ injectGlobal`
     color: white;
   }
 
+  button.close:hover {
+    color: none;
+    background: none;
+  }
+
   h1 {
     font-size: 4.0em;
   }
@@ -63,7 +68,7 @@ injectGlobal`
   }
 
   form {
-    padding: 40px;
+    padding-top: 40px;
   }
 
   input {
@@ -102,5 +107,20 @@ injectGlobal`
   button.follow:hover,
   button.like:hover {
     color: gray;
+  }
+
+  textarea {
+    border: 2.5px double #bcdbb6;
+    display: block;
+    padding-top: 10px;
+    margin: auto;
+    width: 310px;
+    text-align: center;
+    background: #FDF5F2;
+    opacity: 0.75;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    color: #bc5347;
   }
 `

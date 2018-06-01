@@ -1,27 +1,23 @@
 import React from 'react';
-import {Glyphicon} from 'react-bootstrap/lib'
+import {Glyphicon} from 'react-bootstrap/lib';
+import { GreatContainer, UserGreatCreated, UserGreatRemove, PastThankful, DailyGreatContent } from '../../theme/style';
 
 const UserGreats = (props) => {
   const allUserGreats = props.userGreats.map((great, index) => {
     const id = great.id
     return (
-      <div key={index} className="Daily-Great-Container">
-        <div className="All-Greats-Header">
-
-          <div className="Daily-Great-Created">
-            <div className="btn-toolbar">
+      <div key={index}>
+        <GreatContainer>
+          <UserGreatCreated>
               <Glyphicon glyph="calendar" /> {great.date_created}
-            </div>
-          </div>
-
-          <div className="Daily-Great-Remove">
-            <div className="btn-toolbar">
+          </UserGreatCreated>
+          <UserGreatRemove>
               <Glyphicon glyph="remove" onClick={() => props.deleteUserGreat(id)} />
-            </div>
-          </div>
-
-        </div>
-        <p className="Daily-Great-Content">{great.content}</p>
+          </UserGreatRemove>
+          <DailyGreatContent>
+            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+          </DailyGreatContent>
+        </GreatContainer>
       </div>
     )
   })
@@ -30,10 +26,9 @@ const UserGreats = (props) => {
     <div className="row">
       <div className="col-md-4"></div>
       <div className="col-md-4">
-        <div className="Past-Thankful">
-          <br />
-          In the past you have been thankful for... <br />
-        </div>
+        <PastThankful>
+          In the past you have been thankful for...
+        </PastThankful>
         {allUserGreats}
       </div>
       <div className="col-md-4"></div>

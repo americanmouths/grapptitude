@@ -1,17 +1,20 @@
 import React from 'react';
 import {Glyphicon} from 'react-bootstrap/lib';
+import { FolloweeDateCreated, DailyGreatContent, FolloweeGreats } from '../../theme/style';
 
 const FolloweeGreatDisplay = ({followee}) => {
 
   const followeeGreats = followee.map((daily_great, index) => {
     return (
-      <div key={index} className="Followee-Daily-Greats">
-        <div className="Daily-Great-Created btn-toolbar">
-          <Glyphicon glyph="calendar" /> {daily_great.date_created}
-        </div>
-        <div className="Daily-Great-Content">
-          <p>{daily_great.content}</p>
-        </div>
+      <div key={index}>
+        <FolloweeGreats>
+          <FolloweeDateCreated>
+            <Glyphicon glyph="calendar" /> {daily_great.date_created}
+          </FolloweeDateCreated>
+        <DailyGreatContent>
+          {daily_great.content}
+        </DailyGreatContent>
+      </FolloweeGreats>
       </div>
     )
   })

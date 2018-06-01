@@ -1,5 +1,7 @@
 import React from 'react';
 import {Glyphicon} from 'react-bootstrap/lib';
+import { HeaderStyle, NoUserLikes, GreatContainer, Author, DateCreated, DailyGreatContent } from '../../theme/style';
+
 
 const AllUserLikes = ({likes}) => {
 
@@ -7,38 +9,36 @@ const AllUserLikes = ({likes}) => {
 
   const userLikes = likes.map((great, index) => {
     return (
-      <div key={index} className="Daily-Great-Container">
-        <div className="All-Greats-Header">
-          <div className="Daily-Great-Author">
-            <div className="btn-toolbar">
-              <Glyphicon glyph="user" /> {great.user.username}
-            </div>
-          </div>
-          <div className="Daily-Great-Created">
-            <div className="btn-toolbar">
-              <Glyphicon glyph="calendar" /> {great.date_created}
-            </div>
-          </div>
-        </div>
-        <p className="Daily-Great-Content">
-          {great.content}
-        </p>
+      <div key={index}>
+        <GreatContainer>
+          <Author>
+            <Glyphicon glyph="user" /> {great.user.username}
+          </Author>
+
+          <DateCreated>
+            <Glyphicon glyph="calendar" /> {great.date_created}
+          </DateCreated>
+
+          <DailyGreatContent>
+            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+          </DailyGreatContent>
+        </GreatContainer>
       </div>
     )
   })
 
   const noUserLikes = (
-    <div className="No-User-Likes">
+    <NoUserLikes>
       <p>Get started by liking some posts...</p>
-      <a className="btn btn-primary" href="/">All</a>
-    </div>
+      <a href="/main"><button>All</button></a>
+    </NoUserLikes>
   )
 
   return(
     <div>
-      <div className="App-header">
+      <HeaderStyle>
         <h1>Posts you have liked...</h1>
-      </div>
+      </HeaderStyle>
       {hasUserLikes ? userLikes : noUserLikes}
     </div>
   )

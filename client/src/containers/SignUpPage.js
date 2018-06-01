@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { signUpUser } from './../actions/userAuthorization';
 import { connect } from 'react-redux';
-import { FormContainer, AuthErrors } from './../theme/style';
+import { FormContainer, Errors } from './../theme/style';
 
 class SignUpPage extends Component {
   constructor() {
@@ -59,7 +59,7 @@ class SignUpPage extends Component {
 
         <div className="col-md-4">
           <h2>Sign Up</h2>
-          {errors ? <AuthErrors>{errors.user}</AuthErrors> : null}
+          {errors ? <Errors>{errors.user}</Errors> : null}
           <FormContainer>
             <form>
               <input

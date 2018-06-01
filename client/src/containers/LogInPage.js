@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { loginUser } from './../actions/userAuthorization';
-import { FormContainer, AuthErrors } from './../theme/style';
+import { FormContainer, Errors } from './../theme/style';
 
 class LogInPage extends Component {
   constructor() {
@@ -54,7 +54,7 @@ class LogInPage extends Component {
 
         <div className="col-md-4">
             <h2>Log In</h2>
-            {errors ? <AuthErrors>{errors.user}</AuthErrors> : null}
+            {errors ? <Errors>{errors.user}</Errors> : null}
             <FormContainer>
                 <form>
                   <input
