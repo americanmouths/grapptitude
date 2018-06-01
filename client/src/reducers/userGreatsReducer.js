@@ -1,6 +1,6 @@
 export default function userGreatsReducer(state = {
   loading: false,
-  userGreats: [],
+  userGreats: []
 }, action) {
   switch (action.type) {
     case 'FETCH_USER_DAILY_GREATS':

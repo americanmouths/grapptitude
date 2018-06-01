@@ -1,8 +1,9 @@
 import React from 'react';
 import {Glyphicon} from 'react-bootstrap/lib';
-import { GreatContainer, UserGreatCreated, UserGreatRemove, PastThankful, DailyGreatContent } from '../../theme/style';
+import { GreatContainer, UserGreatCreated, UserGreatRemove, PastThankful, DailyGreatContent, Errors } from '../../theme/style';
 
 const UserGreats = (props) => {
+
   const allUserGreats = props.userGreats.map((great, index) => {
     const id = great.id
     return (
