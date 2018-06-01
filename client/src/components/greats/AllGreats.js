@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Glyphicon } from 'react-bootstrap/lib';
-import { GreatContainer, Author, DateCreated, DailyGreatContent } from '../../theme/style';
+import { Glyphicon } from 'react-bootstrap/lib';
+import { GreatContainer, Author, DateCreated, DailyGreatContent, Errors } from '../../theme/style';
 
 const AllGreats = (props) => {
 
   const hasErrors = props.errors && props.errors.length >= 1;
   const errors = (
-    <p className="Great-Errors">{props.errors[0]}</p>
+    <Errors>{props.errors[0]}</Errors>
   )
   const loggedIn = !!localStorage.getItem("token")
 
@@ -41,8 +41,8 @@ const AllGreats = (props) => {
           <DailyGreatContent>
             <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
           </DailyGreatContent>
-          <Button bsSize="small" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</Button>
-          <Button bsSize="small" onClick={() => props.followUser(great.user_id)}><Glyphicon glyph="user" /> Follow</Button>
+          <button className="like" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</button>
+          <button className="follow" onClick={() => props.followUser(great.user_id)}><Glyphicon glyph="user" /> Follow</button>
         </GreatContainer>
       </div>
   )
