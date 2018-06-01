@@ -1,5 +1,6 @@
 import React from 'react';
 import {Glyphicon} from 'react-bootstrap/lib';
+import { GreatContainer, Author, DateCreated, DailyGreatContent, HeaderStyle, NoFollowedUsers } from '../../theme/style';
 
 const FollowedUsers = ({users}) => {
 
@@ -7,34 +8,36 @@ const FollowedUsers = ({users}) => {
 
   const followedUsers = users.map((great, index) => {
     return (
-      <div key={index} className="Daily-Great-Container">
-        <div className="All-Greats-Header">
-          <div className="Daily-Great-Author btn-toolbar">
+      <div key={index}>
+        <GreatContainer>
+          <Author>
             <Glyphicon glyph="user" /> {great.user.username}
-          </div>
-          <div className="Daily-Great-Created btn-toolbar">
+          </Author>
+          <DateCreated>
             <Glyphicon glyph="calendar" /> {great.date_created}
-          </div>
-        </div>
-        <p className="Daily-Great-Content">
-          {great.content}
-        </p>
+          </DateCreated>
+          <DailyGreatContent>
+            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+          </DailyGreatContent>
+        </GreatContainer>
       </div>
     )
   })
 
   const noFollowedUsers = (
-    <div className="No-Followed-Users">
-      <p>Get started by following some users</p>
-      <a className="btn btn-primary" href="/">All</a>
-    </div>
+    <NoFollowedUsers>
+      Get started by following some users
+      <br />
+      <br />
+      <a href="/main"><button>All</button></a>
+    </NoFollowedUsers>
   )
 
   return(
     <div>
-      <div className="App-header">
+      <HeaderStyle>
         <h1>Your followers are greatful for...</h1>
-      </div>
+      </HeaderStyle>
       {hasFollowedUsers ? followedUsers : noFollowedUsers}
     </div>
   )
