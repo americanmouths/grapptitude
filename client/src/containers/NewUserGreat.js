@@ -55,7 +55,7 @@ class NewUserGreatContainer extends Component {
                 className="User-Great-Text-Area"
               />
               <br />
-              <button>Submit</button>
+              <button className="Button-Control">Submit</button>
             </form>
           </FormContainer>
         </div>

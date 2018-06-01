@@ -31,7 +31,7 @@ class UserDailyGreatsContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    userGreats: state.userGreats.userGreats,
+    userGreats: state.userGreats.userGreats
   }
 }
 

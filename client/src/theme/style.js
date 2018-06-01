@@ -21,6 +21,7 @@ export const GreatContainer = styled.main`
   text-align: center;
   background: #19282b;
   opacity: 0.75;
+  margin-bottom: 20px;
 `;
 
 export const Author = styled.main`
@@ -132,6 +133,10 @@ export const UserGreatRemove = styled.main`
   padding-left: 74px;
   color: red;
   display: inline-block;
+
+  :hover {
+    color: black;
+  }
 `;
 
 export const PastThankful = styled.main`

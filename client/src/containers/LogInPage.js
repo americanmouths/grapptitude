@@ -75,7 +75,7 @@ class LogInPage extends Component {
                   />
                   <br />
                   <br />
-                  <button onClick={this.handleSubmit}>Submit</button>
+                  <button onClick={this.handleSubmit} className="Button-Control">Submit</button>
                 </form>
             </FormContainer>
           </div>

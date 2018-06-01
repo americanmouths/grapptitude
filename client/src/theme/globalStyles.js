@@ -52,6 +52,17 @@ injectGlobal`
     color: white;
   }
 
+  .Button-Control {
+    background: black;
+    color: white;
+    width: 100px;
+    height: 40px;
+}
+
+  .Button-Control:hover {
+    background: gray;
+  }
+  
   button.close:hover {
     color: none;
     background: none;
@@ -82,17 +93,6 @@ injectGlobal`
   ::placeholder {
     color: #274046;
     opacity: 1;
-  }
-
-  button {
-    background: black;
-    color: white;
-    width: 100px;
-    height: 40px;
-  }
-
-  button:hover {
-    background: gray;
   }
 
   button.like,
