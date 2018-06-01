@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { signUpUser } from './../actions/userAuthorization';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { FormContainer, AuthErrors } from './../theme/style';
 
 class SignUpPage extends Component {
   constructor() {
@@ -57,8 +58,10 @@ class SignUpPage extends Component {
         </div>
 
         <div className="col-md-4">
-          <h2 className="Sign-Up">Sign Up</h2>
-            <form className="Sign-Up-Form">
+          <h2>Sign Up</h2>
+          {errors ? <AuthErrors>{errors.user}</AuthErrors> : null}
+          <FormContainer>
+            <form>
               <input
                 type="username"
                 name="username"
@@ -66,6 +69,7 @@ class SignUpPage extends Component {
                 onChange={this.handleChange}
                 placeholder="username"
               />
+              <br />
               <br />
               <input
                 type="password"
@@ -76,9 +80,9 @@ class SignUpPage extends Component {
               />
               <br />
               <br />
-              <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
+              <button onClick={this.handleSubmit}>Submit</button>
             </form>
-            {errors ? <div className="SignUp-Errors">{errors.user}</div> : null}
+          </FormContainer>
           </div>
           <div className="col-md-4">
           </div>
