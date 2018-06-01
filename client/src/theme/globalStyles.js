@@ -53,6 +53,54 @@ injectGlobal`
   }
 
   h1 {
-    font-size: 4.5em;
+    font-size: 4.0em;
+  }
+
+  h2 {
+    font-size: 3.0em;
+    text-align: center;
+    color: #4B655E;
+  }
+
+  form {
+    padding: 40px;
+  }
+
+  input {
+    background: darkgray;
+    border: 1px solid black;
+    width: 250px;
+    color: #bc5347;
+    opacity: 1;
+  }
+
+  ::placeholder {
+    color: #274046;
+    opacity: 1;
+  }
+
+  button {
+    background: black;
+    color: white;
+    width: 100px;
+    height: 40px;
+  }
+
+  button:hover {
+    background: gray;
+  }
+
+  button.like,
+  button.follow {
+    border: none;
+    background: transparent !important;
+    margin-right: 15px;
+    margin-left: 15px;
+    color: #cdedc7;
+  }
+
+  button.follow:hover,
+  button.like:hover {
+    color: gray;
   }
 `
