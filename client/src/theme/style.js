@@ -29,7 +29,7 @@ export const Author = styled.main`
   font-family: Montserrat, sans-serif;
   display: inline-block;
   font-weight: 900;
-  padding-right: 33px;
+  padding-right: 5%;
   font-size: 1.1em;
   border-bottom: 1px solid #bcdbb6;;
   position: relative;
@@ -39,7 +39,7 @@ export const DateCreated = styled.main`
   color: #BDA765;
   font-family: Montserrat, sans-serif;
   display: inline-block;
-  padding-left: 33px;
+  padding-left: 5%;
   font-weight: 900;
   font-size: 1.1em;
   border-bottom: 1px solid #bcdbb6;
