@@ -1,28 +1,15 @@
 import React from 'react';
-import {Glyphicon} from 'react-bootstrap/lib';
-import { HeaderStyle, NoUserLikes, GreatContainer, Author, DateCreated, DailyGreatContent } from '../../theme/style';
+import { HeaderStyle, NoUserLikes } from '../../theme/style';
+import GreatComponent from './GreatComponent';
 
 
 const AllUserLikes = ({likes}) => {
 
   const hasUserLikes = likes.length >= 1
-
   const userLikes = likes.map((great, index) => {
     return (
       <div key={index}>
-        <GreatContainer>
-          <Author>
-            <Glyphicon glyph="user" /> {great.user.username}
-          </Author>
-
-          <DateCreated>
-            <Glyphicon glyph="calendar" /> {great.date_created}
-          </DateCreated>
-
-          <DailyGreatContent>
-            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
-          </DailyGreatContent>
-        </GreatContainer>
+        <GreatComponent great={great} />
       </div>
     )
   })
