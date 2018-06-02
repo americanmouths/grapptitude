@@ -28,7 +28,7 @@ const AllGreats = (props) => {
             <Glyphicon glyph="calendar" /> {great.date_created}
           </DateCreated>
           <DailyGreatContent>
-            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+            {great.content}
           </DailyGreatContent>
           <button className="like" onClick={() => props.likeUserGreat(great.id)}><Glyphicon glyph="thumbs-up" /> Like</button>
           <button className="follow" onClick={() => props.followUser(great.user_id)}><Glyphicon glyph="user" /> Follow</button>

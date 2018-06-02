@@ -13,7 +13,7 @@ const GreatComponent = ({great}) => {
           <Glyphicon glyph="calendar" /> {great.date_created}
         </DateCreated>
         <DailyGreatContent>
-          <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+          {great.content}
         </DailyGreatContent>
       </GreatContainer>
     )

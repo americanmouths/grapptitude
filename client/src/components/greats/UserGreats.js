@@ -16,7 +16,7 @@ const UserGreats = (props) => {
               <Glyphicon glyph="remove" onClick={() => props.deleteUserGreat(id)} />
           </UserGreatRemove>
           <DailyGreatContent>
-            <Glyphicon glyph="grain" /> {great.content} <Glyphicon glyph="grain" />
+            {great.content}
           </DailyGreatContent>
         </GreatContainer>
       </div>
