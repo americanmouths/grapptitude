@@ -5,7 +5,7 @@ const NewGreatHeader = () => {
 
   return (
       <HeaderStyle>
-        <h1>Tell me what you are greatful for...</h1>
+        <h1>Tell me what you are grateful for...</h1>
       </HeaderStyle>
     )
   }

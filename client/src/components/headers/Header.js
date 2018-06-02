@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <HeaderStyle>
-      {loggedIn ? <h1>The community is greatful for...</h1> : <h1>What are you thankful for?</h1>}
+      {loggedIn ? <h1>The community is grateful for...</h1> : <h1>What are you thankful for?</h1>}
     </HeaderStyle>
     )
   }
