@@ -29,7 +29,7 @@ const Followees = (props) => {
           </FolloweeAuthor>
           <a href="#" onClick={() => props.followFollowee(followee.id)}><Glyphicon glyph="plus" />Follow</a>
           <FolloweeGreatDisplay followee={followee.daily_greats} />
-      </GreatContainer>
+        </GreatContainer>
       </div>
     )
   })

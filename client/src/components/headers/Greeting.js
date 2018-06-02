@@ -8,6 +8,6 @@ const Greeting = () => {
       <p className="navbar-brand">Welcome {name}</p>
     </div>
   )
-};
+}
 
 export default Greeting;
