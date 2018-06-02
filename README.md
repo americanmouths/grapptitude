@@ -1,10 +1,10 @@
 # README
 
-#Grapptitude
+<h2>Grapptitude</h2>
 
 This is a Ruby on Rails API/React-Redux front end free application for sharing things you are grateful for.
 
-#Installation
+<h2>Installation</h2>
 
 * Git clone into this repo
 * CD grapptitude
@@ -14,7 +14,7 @@ This is a Ruby on Rails API/React-Redux front end free application for sharing t
 * Run npm install
 * Run rake start
 
-#Contributing
+<h2>Contributing</h2>
 
 Thank you for taking an interest in contributing to Grapptitude.
 To contribute follow the standard Github flow:
@@ -22,7 +22,7 @@ To contribute follow the standard Github flow:
 1. Send a pull request with your purposed contributions or any issues you have found.
 2. Please clarify why you are purposing the change.
 
-#Licensure
+<h2>Licensure</h2>
 
 This app has a standard MIT license and may be modified, distributed, and used for private or commercial use so long as copyright and licensure is conserved. Please see link to license below:
 
