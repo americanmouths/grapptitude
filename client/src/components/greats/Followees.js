@@ -27,7 +27,7 @@ const Followees = (props) => {
           <FolloweeAuthor>
             <Glyphicon glyph="user" /> {followee.username}
           </FolloweeAuthor>
-          <a href="#" onClick={() => props.followFollowee(followee.id)}><Glyphicon glyph="plus" />Follow</a>
+          <button onClick={() => props.followFollowee(followee.id)} className="Button-Plus"><Glyphicon glyph="plus" />Follow</button>
           <FolloweeGreatDisplay followee={followee.daily_greats} />
         </GreatContainer>
       </div>

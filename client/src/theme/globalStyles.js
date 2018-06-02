@@ -62,7 +62,7 @@ injectGlobal`
   .Button-Control:hover {
     background: gray;
   }
-  
+
   button.close:hover {
     color: none;
     background: none;
@@ -122,5 +122,9 @@ injectGlobal`
     padding-left: 0;
     padding-right: 0;
     color: #bc5347;
+  }
+
+  .Button-Plus {
+    border: none;
   }
 `
