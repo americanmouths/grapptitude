@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Grapptitude
 
-Things you may want to cover:
+This is a Ruby on Rails API/React-Redux front end free application for sharing things you are grateful for.
 
-* Ruby version
+#Installation
 
-* System dependencies
+* Git clone into this repo
+* CD grapptitude
+* Bundle install
+* Run rails db:create, rails db:migrate & rails db:seed
+* CD client
+* Run npm install
+* Run rake start
 
-* Configuration
+#Contributing
 
-* Database creation
+Thank you for taking an interest in contributing to Grapptitude.
+To contribute follow the standard Github flow:
 
-* Database initialization
+1. Send a pull request with your purposed contributions or any issues you have found.
+2. Please clarify why you are purposing the change.
 
-* How to run the test suite
+#Licensure
 
-* Services (job queues, cache servers, search engines, etc.)
+This app has a standard MIT license and may be modified, distributed, and used for private or commercial use so long as copyright and licensure is conserved. Please see link to license below:
 
-* Deployment instructions
-
-* ...
+<a href="https://github.com/americanmouths/grapptitude/blob/master/LICENSE">License</a>
