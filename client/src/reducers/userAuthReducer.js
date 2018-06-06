@@ -1,12 +1,12 @@
 export function userAuthReducer(state = {
   currentUser: {},
   token: null,
-  isLoading: false,
+  loading: false,
   errors: {}
 }, action) {
   switch (action.type) {
     case 'LOADING_AUTH_REQ':
-      return {...state, isLoading: true}
+      return {...state, loading: true}
     case 'SIGN_UP':
       return setUser(state, action.JSON)
     case 'LOG_IN':
@@ -29,6 +29,6 @@ function setUser(state, json) {
     currentUser: json.user,
     token: json.token,
     errors: json.errors,
-    isLoading: false
+    loading: false
   };
 }
