@@ -23,16 +23,6 @@ class NewUserGreatContainer extends Component {
     this.props.newUserGreat(this.state);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (!!nextProps.token) {
-      this.props.history.push('/home')
-    } else {
-      this.setState({
-        content: '',
-      });
-    }
-  }
-
   render() {
 
     return (
