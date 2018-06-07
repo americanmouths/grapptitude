@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import DailyMindfuls from './../components/mindfuls/DailyMindfuls'
 import { fetchMindfuls } from './../actions/mindfuls'
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class MindfulsContainer extends Component {
 
@@ -25,4 +24,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export const Mindfuls = connect(mapStateToProps, {fetchMindfuls})(MindfulsContainer)
+export const Mindfuls = connect(mapStateToProps, { fetchMindfuls })(MindfulsContainer)

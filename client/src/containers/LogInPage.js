@@ -93,4 +93,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {loginUser})(LogInPage);
+export default connect(mapStateToProps, { loginUser })(LogInPage);
