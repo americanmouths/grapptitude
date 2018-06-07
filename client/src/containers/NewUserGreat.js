@@ -74,10 +74,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    newUserGreat: newUserGreat
-  }, dispatch);
-}
-
-export const NewUserGreat = connect(mapStateToProps, mapDispatchToProps)(NewUserGreatContainer)
+export const NewUserGreat = connect(mapStateToProps, {newUserGreat})(NewUserGreatContainer)

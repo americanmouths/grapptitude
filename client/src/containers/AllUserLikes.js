@@ -26,10 +26,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchUserLikes: fetchUserLikes,
-  }, dispatch);
-}
 
-export const Likes = connect(mapStateToProps, mapDispatchToProps)(AllUserLikesContainer)
+export const Likes = connect(mapStateToProps, {fetchUserLikes})(AllUserLikesContainer)

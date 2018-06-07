@@ -44,7 +44,7 @@ class NavBar extends Component {
           <NavItem eventKey={3} href="/daily_great/liked">Liked</NavItem>
           <NavItem eventKey={4} href="/daily_great/new">New</NavItem>
           <NavItem eventKey={5} href="#" onClick={this.handleShow}>Daily Mindful</NavItem>
-          <NavItem eventKey={6} href="/" onClick={this.logout.bind(this)}>Log Out</NavItem>
+          <NavItem eventKey={6} href="/" onClick={() => this.logout()}>Log Out</NavItem>
         </Nav>
       </Navbar.Collapse>
     )

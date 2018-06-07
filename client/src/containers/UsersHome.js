@@ -26,10 +26,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchFollowedUsers: fetchFollowedUsers,
-  }, dispatch);
-}
-
-export const UsersHome = connect(mapStateToProps, mapDispatchToProps)(UsersHomeContainer)
+export const UsersHome = connect(mapStateToProps, {fetchFollowedUsers})(UsersHomeContainer)

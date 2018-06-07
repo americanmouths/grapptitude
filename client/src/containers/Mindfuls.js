@@ -25,10 +25,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchMindfuls: fetchMindfuls
-  }, dispatch);
-}
-
-export const Mindfuls = connect(mapStateToProps, mapDispatchToProps)(MindfulsContainer)
+export const Mindfuls = connect(mapStateToProps, {fetchMindfuls})(MindfulsContainer)
