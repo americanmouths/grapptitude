@@ -33,7 +33,7 @@ export default function userGreatsReducer(state = {
       return {
         loading: false,
         ...state,
-        userGreats: action.JSON
+        userGreats: action.payload
       }
     default:
       return state;

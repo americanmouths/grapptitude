@@ -50,9 +50,9 @@ export function deleteUserGreatFromAPI(greatId, token){
         'Authorization': `${token}`
       }
     }).then(response => response.json())
-      .then(JSON => dispatch({
+      .then(userGreats => dispatch({
         type: 'DELETE_USER_DAILY_GREAT',
-        JSON: JSON
+        payload: userGreats
       }));
   };
 }
