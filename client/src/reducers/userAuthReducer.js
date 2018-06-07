@@ -8,9 +8,9 @@ export function userAuthReducer(state = {
     case 'LOADING_AUTH_REQ':
       return {...state, loading: true}
     case 'SIGN_UP':
-      return setUser(state, action.JSON)
+      return setUser(state, action.payload)
     case 'LOG_IN':
-      return setUser(state, action.JSON)
+      return setUser(state, action.payload)
     case 'LOG_OUT':
       localStorage.clear();
       return state;
@@ -19,16 +19,16 @@ export function userAuthReducer(state = {
   }
 };
 
-function setUser(state, json) {
-  if (json.token) {
-    localStorage.setItem('token', json.token);
-    localStorage.setItem('username', json.user.username);
-    localStorage.setItem('id', json.user.id);
+function setUser(state, user) {
+  if (user.token) {
+    localStorage.setItem('token', user.token);
+    localStorage.setItem('username', user.user.username);
+    localStorage.setItem('id', user.user.id);
   }
   return {...state,
-    currentUser: json.user,
-    token: json.token,
-    errors: json.errors,
+    currentUser: user.user,
+    token: user.token,
+    errors: user.errors,
     loading: false
   };
 }

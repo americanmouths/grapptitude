@@ -11,9 +11,9 @@ export function signUpUser(signUpData) {
         "Content-Type": "application/json"
       }
     }).then(response => response.json())
-      .then(JSON => { dispatch({
+      .then(user => { dispatch({
         type: "SIGN_UP",
-        JSON: JSON
+        payload: user
       });
     });
   }
@@ -32,9 +32,9 @@ export function loginUser(loginData) {
         "Content-Type": "application/json"
       }
     }).then(response => response.json())
-      .then(JSON => { dispatch({
+      .then(user => { dispatch({
         type: "LOG_IN",
-        JSON: JSON
+        payload: user
       });
     });
   }
