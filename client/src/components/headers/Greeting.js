@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Greeting = () => {
+
   const name = localStorage.getItem("username")
 
   return (
