@@ -26,7 +26,7 @@ const FollowedUsers = ({users}) => {
   return(
     <div>
       <HeaderStyle>
-        <h1>Your followers are greatful for...</h1>
+        <h1>Users you are following are greatful for...</h1>
       </HeaderStyle>
       {hasFollowedUsers ? followedUsers : noFollowedUsers}
     </div>
