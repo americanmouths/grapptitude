@@ -6,7 +6,7 @@ import GreatComponent from './GreatComponent';
 const AllGreats = (props) => {
 
   const hasErrors = props.errors && props.errors.length >= 1;
-  const errors = <Errors>{props.errors[0]}</Errors>
+  const errors = <Errors>{props.errors}</Errors>
   const loggedIn = !!localStorage.getItem("token")
 
   const mainGreats = props.greats.map((great, index) => {
