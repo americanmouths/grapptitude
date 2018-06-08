@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { logoutUser } from './../actions/userAuthorization'
-import { Navbar, Nav, NavItem, Modal } from 'react-bootstrap/lib'
+import { Navbar, Nav, NavItem, Modal } from 'react-bootstrap/lib';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Mindfuls } from './../containers/Mindfuls';
 import Greeting from './../components/headers/Greeting';
 

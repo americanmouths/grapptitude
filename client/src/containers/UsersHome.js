@@ -13,7 +13,7 @@ class UsersHomeContainer extends Component {
   render() {
     return (
       <div>
-        <FollowedUsers users={this.props.users}/>
+        <FollowedUsers users={this.props.users} />
       </div>
     );
   }
