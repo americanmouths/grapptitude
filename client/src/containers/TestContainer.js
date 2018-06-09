@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import FollowedUsers from './../components/greats/FollowedUsers';
 import TestGreatContainer from './../components/greats/TestGreatContainer';
 import { testFetchFollowedUsers } from './../actions/test';
 import { testLikeUserGreat } from './../actions/test';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { GreatContainer, Author, DateCreated, DailyGreatContent, HeaderStyle } from './../theme/style';
-import { Glyphicon } from 'react-bootstrap/lib';
-
 
 class TestContainer extends Component {
 

@@ -35,7 +35,7 @@ class NavBar extends Component {
     const userNav = (
       <Navbar.Collapse>
         <Nav pullRight>
-          <LinkContainer to="/main"><NavItem eventKey={1} exact={true}>All</NavItem></LinkContainer>
+          <LinkContainer to="/main" exact={true}><NavItem eventKey={1}>All</NavItem></LinkContainer>
           <LinkContainer to="/following"><NavItem eventKey={2}>Following</NavItem></LinkContainer>
           <LinkContainer to="/followees"><NavItem eventKey={3}>Followees</NavItem></LinkContainer>
           <LinkContainer to="/daily_great/liked"><NavItem eventKey={3}>Liked</NavItem></LinkContainer>

@@ -21,6 +21,11 @@ injectGlobal`
     border: none;
   }
 
+  .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: #274046;
+    color: #FDF5F2;
+}
+
   .navbar-default .navbar-brand {
     color: #FDF5F2;
   }
