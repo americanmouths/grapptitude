@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { newUserGreat } from './../actions/userGreats';
 import { FormContainer } from './../theme/style';
+import { bindActionCreators } from 'redux';
 
 class NewUserGreatContainer extends Component {
   constructor() {
@@ -57,10 +58,9 @@ class NewUserGreatContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    userGreats: state.userGreats
-  }
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    newUserGreat: newUserGreat
+  }, dispatch);
 }
-
-export const NewUserGreat = connect(mapStateToProps, { newUserGreat })(NewUserGreatContainer)
+export const NewUserGreat = connect(null, mapDispatchToProps)(NewUserGreatContainer)
