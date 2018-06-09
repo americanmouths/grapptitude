@@ -5,8 +5,9 @@ import GreatComponent from './GreatComponent';
 const FollowedUsers = ({users}) => {
 
   const hasFollowedUsers = users && users.length >= 1
-
+  
   const followedUsers = users.map((great, index) => {
+
     return (
       <div key={index}>
         <GreatComponent great={great} />

@@ -6,9 +6,9 @@ import { GreatContainer, FolloweeAuthor, Errors, HeaderStyle, NoFolloweeUsers } 
 const Followees = (props) => {
 
   const hasFollowees = props.followees && props.followees.length >= 1
-  const hasErrors = props.errors && props.errors.length >= 1;
+  const hasErrors = !!props.errors
   const errors = (
-    <Errors>{props.errors[0]}</Errors>
+    <Errors>{props.errors}</Errors>
   )
 
   const noFollowees = (

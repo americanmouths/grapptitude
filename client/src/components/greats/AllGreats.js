@@ -5,7 +5,7 @@ import GreatComponent from './GreatComponent';
 
 const AllGreats = (props) => {
 
-  const hasErrors = props.errors && props.errors.length >= 1;
+  const hasErrors = !!props.errors
   const errors = <Errors>{props.errors}</Errors>
   const loggedIn = !!localStorage.getItem("token")
 
