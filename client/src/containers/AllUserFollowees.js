@@ -27,7 +27,7 @@ class UserFolloweesContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    followees: state.followees.followees,
+    followees: state.greats.followees,
     errors: state.greats.errors
   }
 }
