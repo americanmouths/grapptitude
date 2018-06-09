@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FollowedUsers from './../components/greats/FollowedUsers'
 import { fetchFollowedUsers } from './../actions/greats'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 
 class UsersHomeContainer extends Component {
@@ -21,8 +22,14 @@ class UsersHomeContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.followedUsers.followedUsers
+    users: state.greats.followedUsers
   }
 }
 
-export const UsersHome = connect(mapStateToProps, { fetchFollowedUsers })(UsersHomeContainer)
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchFollowedUsers: fetchFollowedUsers
+  }, dispatch);
+}
+
+export const UsersHome = connect(mapStateToProps, mapDispatchToProps)(UsersHomeContainer)
