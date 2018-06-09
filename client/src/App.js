@@ -10,6 +10,7 @@ import { AllAppGreats } from './containers/AllAppGreats';
 import { Likes } from './containers/AllUserLikes';
 import { AllUserGreats } from './containers/AllUserGreats';
 import { UserFollowees } from './containers/AllUserFollowees';
+import { Test } from './containers/TestContainer';
 
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
           <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/daily_great/liked" component={Likes} />
           <Route exact path="/daily_great/new" component={AllUserGreats} />
-          <Route exact path="/following" component={UsersHome} />
+          <Route exact path="/following" component={Test} />
           <Route exact path="/followees" component={UserFollowees} />
         </Switch>
       </div>
