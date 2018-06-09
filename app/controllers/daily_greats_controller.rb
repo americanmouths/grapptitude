@@ -42,4 +42,12 @@ class DailyGreatsController < ApplicationController
     render json: likedgreats, status: 200
   end
 
+  def test
+    dailygreat = DailyGreat.find(params[:id])
+    current_user.like!(dailygreat)
+    dailygreat.increment!(:likers_count)
+    dailygreats = DailyGreat.where(user_id: current_user.followees(User)).order(id: :desc)
+    render json: dailygreats, status: 200
+  end
+
 end

@@ -12,6 +12,7 @@ resources :users
       resources :daily_greats
       get '/likes' => 'daily_greats#liked'
       post '/daily_greats/:id/like' => 'daily_greats#like'
+      post '/daily_greats/:id/test' => 'daily_greats#test'
     end
 
     get '/daily_mindfuls' => 'daily_mindfuls#index'
