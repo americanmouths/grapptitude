@@ -35,12 +35,12 @@ class NavBar extends Component {
     const userNav = (
       <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem eventKey={1} href="/main">All</NavItem>
-          <NavItem eventKey={2} href="/following">Following</NavItem>
-          <NavItem eventKey={3} href="/followees">Followees</NavItem>
-          <NavItem eventKey={3} href="/daily_great/liked">Liked</NavItem>
-          <NavItem eventKey={4} href="/daily_great/new">New</NavItem>
-          <NavItem eventKey={5} href="#" onClick={() => this.handleShow()}>Daily Mindful</NavItem>
+          <LinkContainer to="/main"><NavItem eventKey={1} exact={true}>All</NavItem></LinkContainer>
+          <LinkContainer to="/following"><NavItem eventKey={2}>Following</NavItem></LinkContainer>
+          <LinkContainer to="/followees"><NavItem eventKey={3}>Followees</NavItem></LinkContainer>
+          <LinkContainer to="/daily_great/liked"><NavItem eventKey={3}>Liked</NavItem></LinkContainer>
+          <LinkContainer to="/daily_great/new"><NavItem eventKey={4}>New</NavItem></LinkContainer>
+          <LinkContainer to="#" onClick={() => this.handleShow()}><NavItem eventKey={5}>Daily Mindful</NavItem></LinkContainer>
           <NavItem eventKey={6} href="/" onClick={() => this.logout()}>Log Out</NavItem>
         </Nav>
       </Navbar.Collapse>
@@ -49,10 +49,10 @@ class NavBar extends Component {
     const guestNav = (
       <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem eventKey={1} href="/main">Main</NavItem>
-          <NavItem eventKey={2} href="#" onClick={() => this.handleShow()}>Daily Mindful</NavItem>
-          <NavItem eventKey={3} href="/signup">Sign Up</NavItem>
-          <NavItem eventKey={4} href="/login">Login</NavItem>
+          <LinkContainer to="/main"><NavItem eventKey={1} exact={true}>All</NavItem></LinkContainer>
+          <LinkContainer to="#" onClick={() => this.handleShow()}><NavItem eventKey={2}>Daily Mindful</NavItem></LinkContainer>
+          <LinkContainer to="/signup"><NavItem eventKey={3}>Sign Up</NavItem></LinkContainer>
+          <LinkContainer to="/login" exact={true}><NavItem eventKey={4}>Login</NavItem></LinkContainer>
         </Nav>
       </Navbar.Collapse>
     )
