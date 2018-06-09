@@ -9,11 +9,20 @@ export default function testReducer(state = {
       loading: true
     }
     case 'TEST_LIKE_USER_DAILY_GREAT':
-    return {
-      ...state,
-      loading: false,
-      dailygreats: action.payload
-    }
+      const newdailygreat = action.payload
+      const index = state.dailygreats.map(function(el) {
+        return el.id;
+      }).indexOf(newdailygreat.id)
+
+      return Object.assign({}, state, {
+        dailygreats:
+        state.dailygreats.slice(0, index)
+          .concat([{
+            ...state.dailygreats[index],
+          likers_count: newdailygreat.likers_count
+          }])
+          .concat(state.dailygreats.slice(index + 1))
+      })
     case 'TEST_FETCHING_FOLLOWED_USERS':
       return {
         ...state,
