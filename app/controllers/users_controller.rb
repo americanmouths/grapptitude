@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def followers
     user = User.find(params[:user_id])
-    followergreats = DailyGreat.where(user_id: user.followees(User))
+    followergreats = DailyGreat.where(user_id: user.followees(User)).order(id: :desc)
     render json: followergreats, status: 200
   end
 
