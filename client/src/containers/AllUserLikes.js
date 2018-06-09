@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import AllUserLikes from './../components/greats/AllUserLikes'
-import { fetchUserLikes } from './../actions/greats'
+import AllUserLikes from './../components/greats/AllUserLikes';
+import { fetchUserLikes } from './../actions/greats';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 
 class AllUserLikesContainer extends Component {
@@ -21,9 +22,14 @@ class AllUserLikesContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    likes: state.likes.likes
+    likes: state.greats.likes
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchUserLikes: fetchUserLikes
+  }, dispatch);
+}
 
-export const Likes = connect(mapStateToProps, { fetchUserLikes })(AllUserLikesContainer)
+export const Likes = connect(mapStateToProps, mapDispatchToProps)(AllUserLikesContainer)
