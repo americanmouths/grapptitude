@@ -29,8 +29,8 @@ class TestContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     users: state.test.dailygreats
+    }
   }
-}
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
