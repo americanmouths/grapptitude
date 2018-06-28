@@ -29,7 +29,7 @@ gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'knock'
 gem 'jwt'
-
+gem 'sprockets', '~> 3.7.2'
 # Use Socialization to Like/Follow
 gem "socialization"
 
