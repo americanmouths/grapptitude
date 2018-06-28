@@ -22,6 +22,9 @@ class NewUserGreatContainer extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.newUserGreat(this.state);
+    this.setState({
+      content: ''
+    });
   }
 
   render() {
