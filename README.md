@@ -1,18 +1,10 @@
-# README
-
-<h2>Grapptitude</h2>
+# Grapptitude
 
 This is a Ruby on Rails API/React-Redux front end free application for sharing things you are grateful for.
 
-<h2>Installation</h2>
-
-* Git clone into this repo
-* CD grapptitude
-* Bundle install
-* Run rails db:create, rails db:migrate & rails db:seed
-* CD client
-* Run npm install
-* Run rake start
+<h2>Usage</h2>
+To use this application live <a href="https://grapptitude.herokuapp.com/
+"> visit it here</a>
 
 <h2>Contributing</h2>
 
